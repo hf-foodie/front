@@ -59,7 +59,7 @@ const Header: FC<Props> = ({ bottomBorder, className }) => {
           <Logo />
           <div className="h-8 border-l"></div>
           <div className="-ms-1.5">
-            <SearchModal type="type1" />
+            <SearchModal />
           </div>
         </div>
 

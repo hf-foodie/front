@@ -3,3 +3,4 @@ export interface CustomLink {
   href: string
   targetBlank?: boolean
 }
+

@@ -67,7 +67,7 @@ export async function getTouristAttraction() {
       status: 'published',
       author: {
         id: 'author-1',
-        name: 'John Doe',
+        name: '문성욱',
         handle: 'john-doe',
         avatar: {
           src: _demo_author_image_urls[0],
@@ -161,7 +161,7 @@ export async function getTouristAttraction() {
       status: 'published',
       author: {
         id: 'author-1',
-        name: 'John Doe',
+        name: '문성욱',
         handle: 'john-doe',
         avatar: {
           src: _demo_author_image_urls[0],
@@ -208,7 +208,7 @@ export async function getTouristAttraction() {
       status: 'published',
       author: {
         id: 'author-1',
-        name: 'John Doe',
+        name: '문성욱',
         handle: 'john-doe',
         avatar: {
           src: _demo_author_image_urls[0],

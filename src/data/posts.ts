@@ -1,7 +1,6 @@
 import { _demo_author_image_urls } from './authors'
 
 // TODO: replace with actual images
-// TODO: replace with actual images
 // _demo_post_image_urls has length 20
 const _demo_post_image_urls = [
   'https://images.unsplash.com/photo-1731437519600-f1219cded2cd?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -1694,6 +1693,10 @@ export async function getAllPosts() {
   //return posts
 }
 
+export async function getAllPosts1() {
+
+}
+
 export async function getPostByHandle(handle: string) {
   const posts = await getAllPosts()
   let post = posts.find((post) => post.handle === handle) as TPost
@@ -1825,8 +1828,6 @@ export type TPost = Awaited<ReturnType<typeof getAllPosts>>[number] & {
   videoUrl?: string
   galleryImgs?: string[]
 }
-
-
 
 export type TPostDetail = Awaited<ReturnType<typeof getPostByHandle>>
 export type TComment = Awaited<ReturnType<typeof getCommentsByPostId>>[number]

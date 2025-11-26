@@ -22,10 +22,10 @@ const SectionMagazineHeader: FC<Props> = ({
       <Heading subHeading={subHeading} dimHeading={dimHeading}>
         {heading}
       </Heading>
-      <Button outline className="shrink-0" href={rightButtonHref}>
-        <span>전체보기</span>
-        <ArrowRightIcon className="size-5 rtl:rotate-180" />
-      </Button>
+      {/*<Button outline className="shrink-0" href={rightButtonHref}>*/}
+      {/*  <span>전체보기</span>*/}
+      {/*  <ArrowRightIcon className="size-5 rtl:rotate-180" />*/}
+      {/*</Button>*/}
     </div>
   )
 }

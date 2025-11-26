@@ -36,62 +36,40 @@ interface Option {
 const recommended_searches: Option[] = [
   {
     type: 'recommended_searches',
-    name: 'Design',
+    name: '흥미원',
     icon: Search01Icon,
-    uri: '/search/?s=design',
+    uri: '/search/?s=흥미원',
   },
   {
     type: 'recommended_searches',
-    name: 'Development',
+    name: '궁중돼지국밥',
     icon: Search01Icon,
-    uri: '/search/?s=development',
-  },
-  {
-    type: 'recommended_searches',
-    name: 'Marketing',
-    icon: Search01Icon,
-    uri: '/search/?s=marketing',
-  },
-  {
-    type: 'recommended_searches',
-    name: 'Travel',
-    icon: Search01Icon,
-    uri: '/search/?s=travel',
+    uri: '/search/?s=궁중돼지국밥',
   },
 ]
 
 const quickActions: Option[] = [
   {
     type: 'quick-action',
-    name: 'Go to search page',
+    name: '통합검색',
     icon: Search01Icon,
     uri: '/search/?s=',
   },
   {
     type: 'quick-action',
-    name: 'Search authors',
+    name: '글쓴이 검색',
     icon: UserSearchIcon,
     uri: '/search/?tab=authors&s=',
   },
   {
     type: 'quick-action',
-    name: 'Search categories',
-    icon: FolderDetailsIcon,
-    uri: '/search/?tab=categories&s=',
-  },
-  {
-    type: 'quick-action',
-    name: 'Search tags',
+    name: '태그 검색',
     icon: Tag02Icon,
     uri: '/search/?tab=tags&s=',
   },
 ]
 
-interface Props {
-  type: 'type1' | 'type2'
-}
-
-const SearchModal: FC<Props> = ({ type = 'type1' }) => {
+const SearchModal: FC = () => {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -110,25 +88,6 @@ const SearchModal: FC<Props> = ({ type = 'type1' }) => {
     setQuery(e.target.value)
   }
 
-  const buttonOpenModal2 = () => {
-    return (
-      <>
-        <div className="hidden md:block">
-          <Button outline className="w-full justify-between px-4!" onClick={() => setOpen(true)}>
-            <span className="text-sm/6 font-normal text-neutral-500 dark:text-neutral-400">Type to search...</span>
-            <HugeiconsIcon icon={Search01Icon} size={24} className="ms-auto" />
-          </Button>
-        </div>
-
-        <div className="-ms-1 md:hidden">
-          <ButtonCircle plain onClick={() => setOpen(true)}>
-            <HugeiconsIcon icon={Search01Icon} size={24} />
-          </ButtonCircle>
-        </div>
-      </>
-    )
-  }
-
   const buttonOpenModal1 = () => {
     return (
       <ButtonCircle plain onClick={() => setOpen(true)}>
@@ -139,7 +98,7 @@ const SearchModal: FC<Props> = ({ type = 'type1' }) => {
 
   return (
     <>
-      <>{type === 'type1' ? buttonOpenModal1() : buttonOpenModal2()}</>
+      <>{buttonOpenModal1()}</>
 
       <Dialog
         className={`relative z-50`}
@@ -237,7 +196,7 @@ const SearchModal: FC<Props> = ({ type = 'type1' }) => {
                 {query === '' && (
                   <li className="p-2">
                     <h2 className="mt-4 mb-2 px-3 text-xs font-medium text-gray-500 dark:text-gray-300">
-                      Recommended searches
+                      추천 검색어
                     </h2>
 
                     <ul className="text-sm text-gray-700 dark:text-gray-300">

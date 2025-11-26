@@ -98,7 +98,7 @@ const CardMagazineTour: FC<Props> = ({ className, touristAttraction, galleryType
 
         {postType === 'gallery' && galleryImgs?.length && (
           <Link
-            href={`/post/${handle}`}
+            href={`javascript:void(0)`}
             className="absolute inset-0 bg-neutral-900/20 opacity-0 transition-opacity group-hover:opacity-100"
           />
         )}
@@ -111,7 +111,7 @@ const CardMagazineTour: FC<Props> = ({ className, touristAttraction, galleryType
 
       <div className="mt-4 space-y-4 px-4">
         <h2 className="block font-semibold text-neutral-900 sm:text-lg dark:text-neutral-100">
-          <Link href={`/post/${handle}`} title={title}>
+          <Link href={`javascript:void(0)`} title={title}>
             {title}
           </Link>
         </h2>

@@ -15,7 +15,7 @@ export function Pagination({
 export function PaginationPrevious({
   href = null,
   className,
-  children = 'Previous',
+  children = '이전',
 }: React.PropsWithChildren<{ href?: string | null; className?: string }>) {
   return (
     <span className={clsx(className, 'grow basis-0')}>
@@ -36,7 +36,7 @@ export function PaginationPrevious({
 export function PaginationNext({
   href = null,
   className,
-  children = 'Next',
+  children = '다음',
 }: React.PropsWithChildren<{ href?: string | null; className?: string }>) {
   return (
     <span className={clsx(className, 'flex grow basis-0 justify-end')}>

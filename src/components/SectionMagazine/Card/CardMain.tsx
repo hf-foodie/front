@@ -44,7 +44,7 @@ const CardMain: FC<Props> = ({ className, size = 'normal', magazine }) => {
           src={featuredImage}
           alt={title}
         />
-        <Link href={`/magazine/${handle}`} className="absolute inset-0 z-0"></Link>
+        <Link href={`/post/${handle}`} className="absolute inset-0 z-0"></Link>
         <PostTypeFeaturedIcon
           className="absolute bottom-3 left-3"
           postType={postType}
@@ -67,7 +67,7 @@ const CardMain: FC<Props> = ({ className, size = 'normal', magazine }) => {
               size === 'large' ? 'text-base sm:text-lg md:text-xl' : 'text-base'
             )}
           >
-            <Link href={`/magazine/${handle}`} className="line-clamp-2 text-3xl" title={title}>
+            <Link href={`/post/${handle}`} className="line-clamp-2 text-3xl" title={title}>
               {title}
             </Link>
           </h2>

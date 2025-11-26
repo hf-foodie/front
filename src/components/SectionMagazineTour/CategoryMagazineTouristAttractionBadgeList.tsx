@@ -1,4 +1,4 @@
-import { BadgeButton } from '@/shared/Badge'
+import {Badge, BadgeButton} from '@/shared/Badge'
 import clsx from 'clsx'
 import { FC } from 'react'
 
@@ -16,9 +16,9 @@ const CategoryMagazineTouristAttractionBadgeList: FC<Props> = ({ className, item
   return (
     <div className={clsx('category-badge-list flex flex-wrap gap-x-2 gap-y-1', className)}>
       {categories.map((item, index) => (
-        <BadgeButton className={itemClass} key={index} href={`/category/${item.handle}`} color={item.color as any}>
+        <Badge className={itemClass} key={index} color={item.color as any}>
           {item.name}
-        </BadgeButton>
+        </Badge>
       ))}
     </div>
   )

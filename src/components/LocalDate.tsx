@@ -11,7 +11,7 @@ interface Props {
 const LocalDate: FC<Props> = ({ date, className, options = { month: 'short', day: 'numeric', year: 'numeric' } }) => {
   return (
     <time dateTime={date} className={className}>
-      {new Date(date).toLocaleDateString('en-US', options)}
+      {new Date(date).toLocaleDateString('ko-KR', options)}
     </time>
   )
 }
