@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="앱 메인 페이지 완성">
+    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="포스터 보기 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/SearchModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/SearchModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocalDate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocalDate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PostCardMeta/PostCardMeta3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostCardMeta/PostCardMeta3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionFoodie/SectionBecomeAnFoodie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionFoodie/SectionBecomeAnFoodie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazine/Badge/MagazineBadgeList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazine/Badge/MagazineBadgeList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazine/Card/CardMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazine/Card/CardMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazine/SectionMagazineHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazine/SectionMagazineHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazineTour/CardMegazineTour.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazineTour/CardMegazineTour.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazineTour/CategoryMagazineTouristAttractionBadgeList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazineTour/CategoryMagazineTouristAttractionBadgeList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/TouristAttraction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/TouristAttraction.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/magazines.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/magazines.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00001/00001.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00001.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00002/00002.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00002.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00003/00003.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00003.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00004/00004.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00004.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00005/00005.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00005.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00006/00006.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00006.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00007/00007.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00007.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00008/00008.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00008.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/00009/00009.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/00009.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Badge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/navigation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +54,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/src/app/(app)",
+    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,18 +77,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\components" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)\influencer\intern" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)\influencer" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)\about" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data\comments" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\components\CardAuthorBoxs" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)\post" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data\posts\00001" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data\posts" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: 서버 측">
@@ -148,7 +124,7 @@
       <workItem from="1764082268895" duration="5848000" />
       <workItem from="1764155176341" duration="17689000" />
       <workItem from="1764173487073" duration="1040000" />
-      <workItem from="1764174535675" duration="4787000" />
+      <workItem from="1764174535675" duration="7316000" />
     </task>
     <task id="LOCAL-00001" summary="next 프로젝트 새로 생성">
       <option name="closed" value="true" />
@@ -174,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764087999806</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="포스터 보기 기능 추가">
+      <option name="closed" value="true" />
+      <created>1764179392355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764179392355</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +173,7 @@
     <MESSAGE value="next 프로젝트 새로 생성" />
     <MESSAGE value="앱 기초 레이아웃 헤더 및 푸터 템플릿 추가" />
     <MESSAGE value="앱 메인 페이지 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="앱 메인 페이지 완성" />
+    <MESSAGE value="포스터 보기 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="포스터 보기 기능 추가" />
   </component>
 </project>

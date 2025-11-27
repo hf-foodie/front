@@ -40,28 +40,28 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
           children: [
             {
               id: '2-0',
-              href: '/category/technology',
+              href: '/influencer/ceo',
               name: '사장님의 선택',
             },
             {
               id: '2-1',
-              href: '/tag/food',
+              href: '/influencer/vpresident',
               name: '부사장님의 선택',
             },
             {
               id: '2-2',
-              href: '/author/john-doe',
+              href: '/influencer/cc',
               name: '사내커플 추천',
             },
             {
               id: '2-3',
-              href: '/search?s=technology',
+              href: '/influencer/intern',
               name: '인턴\'s Pick',
             },
             {
               id: '2-4',
-              href: '/search-2?s=technology',
-              name: '로컬맛집',
+              href: '/influencer/professional',
+              name: '전문가의 추천',
             }
           ],
         },
