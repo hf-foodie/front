@@ -1786,32 +1786,22 @@ export async function getRealEstateListingFilterOptions() {
 export async function getCarListingFilterOptions() {
   return [
     {
-      label: 'Car type',
+      label: '점심/저녁',
       name: 'Car-type',
       tabUIType: 'checkbox',
       options: [
         {
-          name: 'Sedan',
+          name: '점심',
           value: 'sedan',
           description: 'Comfortable and spacious for city driving.',
           defaultChecked: true,
         },
         {
-          name: 'SUV',
+          name: '저녁',
           value: 'suv',
           description: 'Perfect for off-road adventures and family trips.',
           defaultChecked: true,
-        },
-        {
-          name: 'Truck',
-          value: 'truck',
-          description: 'Ideal for heavy loads and rugged terrain.',
-        },
-        {
-          name: 'Convertible',
-          value: 'convertible',
-          description: 'Enjoy the open air with a stylish ride.',
-        },
+        }
       ],
     },
     {

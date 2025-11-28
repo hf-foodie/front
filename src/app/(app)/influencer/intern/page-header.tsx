@@ -1,82 +1,67 @@
 'use client'
 
 import FollowButton from '@/components/FollowButton'
-import { TCategory } from '@/data/categories'
+import VerifyIcon from '@/components/VerifyIcon'
+import { TAuthor } from '@/data/authors'
 import Avatar from '@/shared/Avatar'
-import { Badge } from '@/shared/Badge'
 import { Button } from '@/shared/Button'
 import ButtonCircle from '@/shared/ButtonCircle'
+import SocialsList from '@/shared/SocialsList'
 import { Dialog, DialogActions, DialogBody, DialogTitle } from '@/shared/dialog'
 import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@/shared/dropdown'
+import { GlobeAltIcon } from '@heroicons/react/24/outline'
 import {
   CopyLinkIcon,
   Facebook01Icon,
-  Fire03Icon,
   Flag03Icon,
   Mail01Icon,
   MoreHorizontalIcon,
   NewTwitterIcon,
-  PlayListIcon,
   Share03Icon,
   ViewOffSlashIcon,
-  Vynil02Icon,
 } from '@hugeicons/core-free-icons'
 import { HugeiconsIcon } from '@hugeicons/react'
 import clsx from 'clsx'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
-const PageHeader = ({
-  className
-}: {
-  className?: string
-}) => {
+const PageHeader = ({ author, className }: { author: TAuthor; className?: string }) => {
+  const { name, description, cover, avatar, handle } = author
 
   return (
     <div className={clsx('w-full', className)}>
-      <div className="relative h-32 w-full bg-neutral-100 md:h-48 dark:bg-white/10" />
-      <div className="container -mt-16">
-        <div className="relative flex flex-col items-start gap-6 rounded-3xl border border-transparent bg-white p-5 shadow-xl md:flex-row md:rounded-4xl lg:p-8 lg:px-9 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="relative h-20 w-full md:h-30 2xl:h-42" />
+      <div className="container -mt-10 lg:-mt-16">
+        <div className="relative flex flex-col items-start gap-6 rounded-3xl border border-transparent bg-white p-5 shadow-xl md:flex-row md:rounded-4xl lg:p-8 dark:border-neutral-700 dark:bg-neutral-900">
           {/* AVATAR */}
           <Avatar
-            alt={'인턴'}
-            src={'/images/intern.png'}
-            square
-            width={144}
-            height={144}
-            className="shrink-0 rotate-12 shadow-2xl ring-4 ring-white lg:w-36"
-            sizes="144px"
+            alt='김인턴'
+            src="/images/influencer/intern/avatar-intern.png"
+            width={128}
+            height={128}
+            className="shrink-0 rounded-full shadow-2xl ring-4 ring-white lg:w-32"
+            sizes="128px"
           />
 
           {/* INFO */}
-          <div className="flex-1 lg:ps-4">
+          <div className="grow lg:ps-2">
             <div className="max-w-(--breakpoint-sm) space-y-3.5">
-              <div>
-                <Badge color={color as any}>Category</Badge>
-                <h2 className="mt-2 text-2xl font-semibold lg:text-3xl">인턴's Pick</h2>
+              <div className="flex items-center lg:gap-x-0.5">
+                <h2 className="text-2xl font-semibold lg:text-3xl">맛잘알 김인턴</h2>
+                <VerifyIcon iconClass="size-6 lg:size-7" />
               </div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                  젊은 인턴님의 입맛을 사로잡은 음식점은 어디인가?
-              </p>
-              <p className="mt-auto flex items-center gap-x-1 text-sm">
-                {type === 'audio' && <HugeiconsIcon icon={Vynil02Icon} size={20} />}
-                {type === 'video' && <HugeiconsIcon icon={PlayListIcon} size={20} />}
-                {type === 'default' && <HugeiconsIcon icon={Fire03Icon} size={20} />}
-                <span>
-                  {count}
-                  {` `}
-                  {type === 'audio' && 'podcasts'}
-                  {type === 'video' && 'videos'}
-                  {type === 'default' && 'articles'}
-                </span>
-              </p>
+              <p className="text-lg text-neutral-600 dark:text-neutral-400">젊은 입맛으로 수집한 맛집을 주택금융공사 임직원께 전달해드립니다 !!</p>
+              <Link href="#" className="flex items-center gap-x-2 text-xs text-neutral-500 dark:text-neutral-400">
+                <GlobeAltIcon className="size-4" />
+                <span className="font-medium text-neutral-700 dark:text-neutral-300">https://example.com/me</span>
+              </Link>
             </div>
           </div>
 
           {/* ACTIONS */}
-          <div className="flex gap-x-2 self-start">
-            <FollowButton className="py-[calc(--spacing(2)-1px)]!" />
-            <ShareDropdown handle={handle} />
-            <ActionDropdown handle={handle} category={category} />
+          <div className="flex gap-x-2">
+            <ActionDropdown handle={handle} author={author} />
           </div>
         </div>
       </div>
@@ -120,7 +105,7 @@ function ShareDropdown({ handle }: { handle: string }) {
   )
 }
 
-function ActionDropdown({ handle, category }: { handle: string; category: TCategory }) {
+function ActionDropdown({ handle, author }: { handle: string; author: TAuthor }) {
   const [isOpenDialogHideAuthor, setIsOpenDialogHideAuthor] = useState(false)
   const [isOpenDialogReportPost, setIsOpenDialogReportPost] = useState(false)
 
@@ -133,14 +118,14 @@ function ActionDropdown({ handle, category }: { handle: string; category: TCateg
       },
     },
     {
-      name: 'Hide category',
+      name: 'Hide author',
       icon: ViewOffSlashIcon,
       onClick: () => {
         setIsOpenDialogHideAuthor(true)
       },
     },
     {
-      name: 'Report category',
+      name: 'Report author',
       icon: Flag03Icon,
       onClick: () => {
         setIsOpenDialogReportPost(true)
@@ -166,12 +151,12 @@ function ActionDropdown({ handle, category }: { handle: string; category: TCateg
       {/* DIALOG HIDE AUTHOR */}
       <Dialog open={isOpenDialogHideAuthor} onClose={() => setIsOpenDialogHideAuthor(false)}>
         <DialogTitle>
-          Hide this category? <span className="font-semibold">({category.name.trim()})</span>
+          Hide this author? <span className="font-semibold">({author.name.trim()})</span>
         </DialogTitle>
         <DialogBody>
           <p>
-            Are you sure you want to hide the <span className="font-semibold">{category.name.trim()}</span>? This action
-            will hide all posts from this category.
+            Are you sure you want to hide the <span className="font-semibold">{author.name.trim()}</span>? This action
+            will hide all posts from this author.
           </p>
         </DialogBody>
         <DialogActions>
@@ -184,12 +169,11 @@ function ActionDropdown({ handle, category }: { handle: string; category: TCateg
 
       {/* DIALOG REPORT POST */}
       <Dialog open={isOpenDialogReportPost} onClose={() => setIsOpenDialogReportPost(false)}>
-        <DialogTitle>Report this category?</DialogTitle>
+        <DialogTitle>Report this author?</DialogTitle>
         <DialogBody>
           <p>
-            Are you sure you want to report the{' '}
-            <span className="font-semibold">&quot;{category.name.trim()}&quot;</span>? This action will report this
-            category.
+            Are you sure you want to report the <span className="font-semibold">&quot;{author.name.trim()}&quot;</span>?
+            This action will report this author.
           </p>
         </DialogBody>
         <DialogActions>
