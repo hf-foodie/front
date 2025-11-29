@@ -6,11 +6,15 @@ import { FC } from 'react'
 
 interface Props {
   className?: string
-  commentCount: number
+  commentCount?: number
   handle: string
 }
 
 const PostCardCommentBtn: FC<Props> = ({ className, commentCount, handle }) => {
+  if (commentCount === undefined) {
+    return null
+  }
+
   return (
     <Link
       href={`/post/${handle}#comments`}

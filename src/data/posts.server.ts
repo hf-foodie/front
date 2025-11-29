@@ -4,32 +4,19 @@ import 'server-only'
 
 import fs from 'fs'
 import path from 'path'
-import {getPostByHandle} from "@/data/posts";
+import {TPost} from "@/data/types";
 
 const postsDirectory = path.join(process.cwd(), 'src/data/posts')
 
-/**
- * Returns an array of post handles (filenames without .json)
- * Used by generateStaticParams.
- */
-export function getAllPostHandles() {
-  try {
-    const filenames = fs.readdirSync(postsDirectory)
-    return filenames
-      .filter((filename) => filename.endsWith('.json'))
-      .map((filename) => filename.replace(/\.json$/, ''))
-  } catch (error) {
-    console.error('Error reading post handles:', error)
-    return []
-  }
-}
+
+
 
 /**
  * Reads a single JSON post file from the src/data/posts directory
  * based on the handle (filename without extension).
- * @param handle The handle of the post (e.g., "00001")
+ * @param handle The handle of the post (e.g., "P00001")
  */
-export function getPostByHandleFromFs(handle: string) {
+export function getPostByHandle(handle: string): TPost | null {
   const filePath = path.join(postsDirectory, `${handle}.json`)
 
   try {
@@ -46,13 +33,13 @@ export function getPostByHandleFromFs(handle: string) {
  * Reads all JSON files from the src/data/posts directory.
  * This function is intended to be used only on the server.
  */
-export function getAllPostsFromFs() {
+export function getAllPosts(): TPost[] {
   try {
     const filenames = fs.readdirSync(postsDirectory)
 
     const jsonFiles = filenames.filter((filename) => filename.endsWith('.json'))
 
-    const posts = jsonFiles.map((filename) => {
+    const posts: TPost[] = jsonFiles.map((filename) => {
       const filePath = path.join(postsDirectory, filename)
       const fileContents = fs.readFileSync(filePath, 'utf8')
       const data = JSON.parse(fileContents)
@@ -66,4 +53,4 @@ export function getAllPostsFromFs() {
   }
 }
 
-export type TPostDetail = Awaited<ReturnType<typeof getPostByHandleFromFs>>
+export type TPostDetail = Awaited<ReturnType<typeof getPostByHandle>>

@@ -32,7 +32,7 @@ export async function getBranches() {
       },
     },
     {
-      id: 'branch-00002',
+      id: 'branch-P00002',
       name: '서울특별시',
       handle: 'seoul',
       count: 13,
@@ -104,7 +104,7 @@ export async function getBranches() {
       },
     },
     {
-      id: 'branch-00008',
+      id: 'branch-P00008',
       name: '순천시',
       handle: 'suncheon',
       count: 13,

@@ -2,7 +2,7 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
   return [
     {
       id: '1',
-      href: '/search?s=technology',
+      href: '/search',
       name: '맛집탐방',
     },
     {
@@ -57,11 +57,6 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
               id: '2-3',
               href: '/influencer/intern',
               name: '인턴\'s Pick',
-            },
-            {
-              id: '2-4',
-              href: '/influencer/professional',
-              name: '전문가의 추천',
             }
           ],
         },

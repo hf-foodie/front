@@ -9,7 +9,7 @@ const Page404: React.FC = () => (
         <h2 className="text-7xl md:text-8xl">🪔</h2>
         <h1 className="text-8xl font-semibold tracking-widest md:text-9xl">404</h1>
         <span className="block text-sm font-medium tracking-wider text-neutral-800 sm:text-base dark:text-neutral-200">
-          {`THE PAGE YOU WERE LOOKING FOR DOESN'T EXIST.`}
+          {`개발 중 입니다. 조금만 기다려주세요 !!`}
         </span>
         <ButtonPrimary href="/" className="mt-4">
           Return Home Page

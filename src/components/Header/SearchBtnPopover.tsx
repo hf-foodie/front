@@ -52,7 +52,7 @@ const SearchBtnPopover = () => {
             <div className="block text-xs/6 text-neutral-500 uppercase md:hidden">
               Press{' '}
               <Link
-                href={'/search'}
+                href={'/(search)'}
                 className="rounded-sm bg-neutral-100 px-1.5 py-0.5 text-xs font-medium text-neutral-900"
               >
                 <kbd className="text-xs font-medium">Enter</kbd>

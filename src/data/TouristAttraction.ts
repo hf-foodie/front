@@ -45,7 +45,7 @@ export type TTouristAttraction = Awaited<ReturnType<typeof getTouristAttraction>
 export async function getTouristAttraction() {
   return [
     {
-      id: 'ta-00001',
+      id: 'ta-P00001',
       featuredImage: {
         src: _demo_post_image_urls[10],
         alt: "Lenovo's smarter devices stoke professional passions",
@@ -92,7 +92,7 @@ export async function getTouristAttraction() {
       ],
     },
     {
-      id: 'ta-00002',
+      id: 'ta-P00002',
       featuredImage: {
         src: _demo_post_image_urls[10],
         alt: "Lenovo's smarter devices stoke professional passions",

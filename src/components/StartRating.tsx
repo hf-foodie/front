@@ -5,11 +5,10 @@ import { FC } from 'react'
 interface StartRatingProps {
   className?: string
   point?: number
-  reviewCount?: number
   size?: 'lg' | 'md'
 }
 
-const StartRating: FC<StartRatingProps> = ({ className, point = 4.5, reviewCount = 112, size = 'md' }) => {
+const StartRating: FC<StartRatingProps> = ({ className, point = 4.5, size = 'md' }) => {
   return (
     <div
       className={clsx(
@@ -23,7 +22,6 @@ const StartRating: FC<StartRatingProps> = ({ className, point = 4.5, reviewCount
         <StarIcon className={clsx('text-orange-400', size === 'lg' && 'size-5', size === 'md' && 'size-4')} />
       </div>
       <span className="font-medium">{point}</span>
-      <span className="text-neutral-500 dark:text-neutral-400">({reviewCount})</span>
     </div>
   )
 }

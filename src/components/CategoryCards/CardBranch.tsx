@@ -12,7 +12,7 @@ interface Props {
 const CardBranch: FC<Props> = ({ className = '', branch }) => {
   const { count, name, handle, thumbnail } = branch
   return (
-    <Link href={`/search/s=${handle}&c=address`} className={`card-category-3 flex flex-col ${className}`}>
+    <Link href={`/(search)/s=${handle}&c=address`} className={`card-category-3 flex flex-col ${className}`}>
       <div className="group aspect-w-5 relative h-0 w-full shrink-0 overflow-hidden rounded-2xl aspect-h-5">
         <Image
           src={thumbnail || ''}

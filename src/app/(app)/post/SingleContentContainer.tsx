@@ -43,20 +43,9 @@ const SingleContentContainer: FC<Props> = ({ post, comments, className }) => {
         summary,
         oneLineReviews,
         address,
-        detailedAddress,
-        addressCategories: { // 더 깊게 중첩된 addressCategories 객체 분해
-            cityNm,
-            sgguNm,
-            emdNm,
-            riNm,
-            stNm,
-            bldgBno,
-            bldgBuno
-        },
         phoneNumber,
-        parkingArea,
         tags,
-        images
+        images,
     } = post
 
     const endedAnchorEntry = useIntersectionObserver(endedAnchorRef, {

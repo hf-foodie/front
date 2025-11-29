@@ -1,8 +1,15 @@
 import { getAuthors } from './authors'
 import { getCategories, getTags } from './categories'
-import { getAllPosts } from './posts'
+import { getAllPosts } from '@/data/posts.server'
 
-export async function getSearchResults(query: string, type: 'posts' | 'categories' | 'tags' | 'authors') {
+export async function getSearchResults(
+  query: string,
+  type: 'posts' | 'categories' | 'tags' | 'authors',
+  page: number = 1,
+  perPage: number = 8
+) {
+  const allPosts = await getAllPosts()
+
   switch (type) {
     case 'categories':
       return {
@@ -25,12 +32,19 @@ export async function getSearchResults(query: string, type: 'posts' | 'categorie
         totalResults: 200,
         recommendedSearches: ['Design', 'Photo', 'Vector', 'Frontend'],
       }
-    default:
+    default: {
+      const totalPosts = allPosts.length
+      const totalPages = Math.ceil(totalPosts / perPage)
+      const start = (page - 1) * perPage
+      const end = start + perPage
+      const posts = allPosts.slice(start, end)
       return {
         query,
-        posts: (await getAllPosts()).slice(0, 12),
-        totalResults: 1135,
+        posts: posts,
+        totalResults: totalPosts,
+        totalPages: totalPages,
         recommendedSearches: ['Design', 'Photo', 'Vector', 'Frontend'],
       }
+    }
   }
 }

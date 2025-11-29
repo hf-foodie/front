@@ -1,6 +1,6 @@
 
 import WidgetTags from '@/components/WidgetTags'
-import { getPostByHandleFromFs } from '@/data/posts.server' // Import getAllPostHandles
+import {getPostByHandle} from '@/data/posts.server' // Import getAllPostHandles
 import { Metadata } from 'next'
 import SingleContentContainer from '../SingleContentContainer'
 import SingleHeaderContainer from '../SingleHeaderContainer'
@@ -11,7 +11,7 @@ import WidgetInfo from "@/components/WidgetInfo";
 
 export async function generateMetadata({ params }: { params: { handle: string } }): Promise<Metadata> {
   const { handle } = params
-  const post = getPostByHandleFromFs(handle)
+  const post = getPostByHandle(handle)
   if (!post) {
     return {
       title: 'Post not found',
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { handle: string } 
 const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
     const { handle } = await params
 
-    const postFromFs = await getPostByHandleFromFs(handle)
+    const postFromFs = await getPostByHandle(handle)
     const comments = await getCommentByHandles(handle)
 
   return (

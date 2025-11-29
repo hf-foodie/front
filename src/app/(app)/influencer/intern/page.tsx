@@ -1,33 +1,49 @@
-import PageHeader from './page-header'
-import {getAuthorByHandle} from "@/data/authors";
-import {getAllPosts} from "@/data/posts";
-import PaginationWrapper from "@/components/PaginationWrapper";
-import ListingFilterTabs from "@/app/(app)/influencer/intern/ListingFilterTabs";
-import {getRestaurantLising, getRestaurantListFilterOptions} from "@/data/influencer-intern";
-import RestaurantCard from "@/app/(app)/influencer/intern/RestaurantCard";
+'use client'
 
-const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
-    const author = await getAuthorByHandle('john-doe')
-    const posts = (await getAllPosts()).slice(0, 10)
-    const filterOptions = await getRestaurantListFilterOptions()
-    const listings = await getRestaurantLising()
+import PageHeader from "@/app/(app)/influencer/intern/page-header";
+import {getRestaurantLising, getRestaurantListFilterOptions} from "@/data/influencer-intern";
+import ListingFilterTabs from "@/app/(app)/influencer/intern/ListingFilterTabs";
+import RestaurantCard from "@/app/(app)/influencer/intern/RestaurantCard";
+import PaginationWrapper from "@/components/PaginationWrapper";
+import {TInfluencerRestaurant} from "@/data/types";
+import {Suspense} from "react";
+import {useSearchParams} from "next/navigation";
+
+const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: any; author: any }) => {
+    const searchParams = useSearchParams()
+    const currentPage = Number(searchParams.get('page')) || 1
+    const itemsPerPage = 8
+    const totalPages = Math.ceil(listings.length / itemsPerPage)
+
+    const currentListings = listings.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
     return (
         <div className="pb-28">
-            <PageHeader author={author}></PageHeader>
+            <PageHeader></PageHeader>
 
             <div className="relative container mt-6 lg:mt-24">
                 <ListingFilterTabs filterOptions={filterOptions} />
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-7 xl:grid-cols-2">
-                    {listings.map((listing) => (
+                    {currentListings.map((listing) => (
                         <RestaurantCard key={listing.id} data={listing} />
                     ))}
                 </div>
                 <div className="mt-16 flex items-center justify-center">
-                    <PaginationWrapper className="mt-20" totalPages={10} />
+                    <PaginationWrapper totalPages={totalPages} />
                 </div>
             </div>
         </div>
+    )
+}
+
+const Page = async () => {
+    const filterOptions = await getRestaurantListFilterOptions()
+    const listings = await getRestaurantLising()
+
+    return (
+        <Suspense>
+            <ListingPageContent listings={listings} filterOptions={filterOptions} />
+        </Suspense>
     )
 }
 

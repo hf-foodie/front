@@ -28,25 +28,14 @@ const TitleAndMeta = ({ className, post, comments }: Omit<Props, 'headerStyle'>)
         summary,
         oneLineReviews,
         address,
-        detailedAddress,
-        addressCategories: { // 더 깊게 중첩된 addressCategories 객체 분해
-            cityNm,
-            sgguNm,
-            emdNm,
-            riNm,
-            stNm,
-            bldgBno,
-            bldgBuno
-        },
         phoneNumber,
-        parkingArea,
         tags,
-        images
+        images,
     } = post
 
   return (
     <div className={`single-header-meta space-y-5 ${className}`}>
-      {/*<CategoryBadgeList categories={categories || []} />*/}
+      {/*<NameBadge categories={categories || []} />*/}
         <SingleTitle title={title} />
         <p className="text-base/relaxed text-neutral-700 md:text-2xl/relaxed dark:text-neutral-400">{subtitle}</p>
         <Divider />

@@ -1,8 +1,10 @@
 
 import rightImg from '@/images/about/hero.png'
 import { Divider } from '@/shared/divider'
-import SectionFounder from './SectionFounder'
+import SectionFounder from './SectionAdministarator'
 import SectionHero from "@/app/(app)/about/SectionHero";
+import SectionContributor from "@/app/(app)/about/SectionContributor";
+import SectionAdministarator from "./SectionAdministarator";
 
 const PageAbout = ({}) => {
   return (
@@ -15,8 +17,9 @@ const PageAbout = ({}) => {
           subHeading="주택금융공사 임직원이 추천하는 맛집 소개, 오늘의 스트레스를 맛있는 음식을 생각하면서 떨쳐버리세요"
         />
         <Divider />
-        <SectionFounder />
-
+        <SectionAdministarator />
+          <Divider />
+          <SectionContributor/>
       </div>
     </div>
   )

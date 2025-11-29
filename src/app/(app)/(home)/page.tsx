@@ -1,7 +1,7 @@
-import { Metadata } from 'next'
+import {Metadata} from 'next'
 import SectionAdvertisement from "@/components/SectionAdvertisement/SectionAdvertisement";
 import SectionMagazine from "@/components/SectionMagazine/SectionMagazine";
-import {getMagazines} from "@/data/magazines";
+import {getMagazineById, TMagazine} from "@/data/magazines";
 import BackgroundSection from "@/components/BackgroundSection";
 import SectionSliderBranches from "@/components/SectionSliderBranches/SectionSliderBranches";
 import {getBranches} from "@/data/branches";
@@ -15,8 +15,20 @@ export const metadata: Metadata = {
     description: 'Home page of the application showcasing various sections and posts.',
 }
 
+async function initMagazines(){
+    /**
+     * SectionMagazine에 배치할 데이터
+     * 0번째는 메인, 1번째는 오른쪽 상단, 2번째는 오른쪽 중단, 3번째는 오른쪽 하단
+     */
+    const magazineIds = ['M00001', 'M00002', 'M00003', 'M00004'];
+    const magazinePromises = magazineIds.map(id => getMagazineById(id));
+    const magazines: (TMagazine | undefined)[] = await Promise.all(magazinePromises);
+
+    return magazines
+}
+
 const Page = async () => {
-    const magazines = await getMagazines();
+    const magazines = await initMagazines();
     const branches = await getBranches()
     const touristAttractions = await getTouristAttraction();
 
@@ -29,7 +41,7 @@ const Page = async () => {
                     className="pt-16 lg:pt-20"
                     heading="HF 매거진"
                     subHeading="맛집원정대가 이달의 맛집을 추천해드려요"
-                    magazines={magazines.slice(0, 4)}
+                    magazines={magazines}
                 />
 
                 <div className="relative py-16 lg:py-20">
