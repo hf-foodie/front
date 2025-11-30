@@ -4,39 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="인플루언서 페이지 완성">
+    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="페이징 알고리즘 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/post/SingleContentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/SingleContentContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/post/SingleHeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/SingleHeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/post/[handle]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/[handle]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/Badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/Badge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/CardSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/CardSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/SearchClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/SearchClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionSliderBranches/Card/CardBranch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionSliderBranches/Card/CardBranch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00001.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00001.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00002.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00002.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00003.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00003.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00004.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00004.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00005.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00005.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00006.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00006.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00007.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00007.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00008.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00008.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00009.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00009.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00010.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00010.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00011.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00011.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00012.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00012.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00013.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00013.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00014.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00014.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00015.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00015.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00016.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00016.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00017.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00017.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00018.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00018.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00019.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00019.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00020.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00020.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00021.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00021.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +54,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/public/images/posts/P00015",
+    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/public/images/posts/P00035",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,11 +79,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00015" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00025" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00035" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data\posts" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00024" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00034" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00033" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00032" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00024" />
@@ -124,7 +93,7 @@
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00017" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Next.js: 서버 측">
     <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -176,7 +145,7 @@
       <workItem from="1764376292597" duration="221000" />
       <workItem from="1764376542501" duration="23363000" />
       <workItem from="1764425683806" duration="22436000" />
-      <workItem from="1764478225488" duration="12014000" />
+      <workItem from="1764478225488" duration="15226000" />
     </task>
     <task id="LOCAL-00001" summary="next 프로젝트 새로 생성">
       <option name="closed" value="true" />
@@ -210,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764316485882</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="페이징 알고리즘 수정">
+      <option name="closed" value="true" />
+      <created>1764490584256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764490584256</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +214,7 @@
     <MESSAGE value="앱 기초 레이아웃 헤더 및 푸터 템플릿 추가" />
     <MESSAGE value="앱 메인 페이지 완성" />
     <MESSAGE value="인플루언서 페이지 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="인플루언서 페이지 완성" />
+    <MESSAGE value="페이징 알고리즘 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="페이징 알고리즘 수정" />
   </component>
 </project>
