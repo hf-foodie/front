@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { FC } from 'react'
 import {TInfluencerRestaurant} from "@/data/types";
 
-export interface CarCardHProps {
+export interface TInternCardProps {
   className?: string
   data: TInfluencerRestaurant
 }
 
-const RestaurantCard: FC<CarCardHProps> = ({ className = '', data }) => {
+const RestaurantCard: FC<TInternCardProps> = ({ className = '', data }) => {
   const {
       id,
       title,

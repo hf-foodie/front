@@ -5,12 +5,12 @@ import {Link} from "@/shared/link";
 import Image from 'next/image'
 import {TVPresidentRestaurant} from "@/data/types";
 
-export interface CarCardHProps {
+export interface TVPresidentCardProps {
   className?: string
   data: TVPresidentRestaurant
 }
 
-const RestaurantCard: FC<CarCardHProps> = ({ className = '', data }) => {
+const RestaurantCard: FC<TVPresidentCardProps> = ({ className = '', data }) => {
   const {
       id,
       title,
@@ -23,6 +23,7 @@ const RestaurantCard: FC<CarCardHProps> = ({ className = '', data }) => {
       branch,
       timeZoneCategory,
       foodStyleCategory,
+      recommendation
   } = data
 
   const listingHref = `/post/${handle}`

@@ -1,6 +1,5 @@
 'use client'
 
-import NcInputNumber from '@/components/NcInputNumber'
 import { Button } from '@/shared/Button'
 import ButtonClose from '@/shared/ButtonClose'
 import ButtonPrimary from '@/shared/ButtonPrimary'
@@ -24,229 +23,12 @@ import { FilterVerticalIcon } from '@hugeicons/core-free-icons'
 import { HugeiconsIcon } from '@hugeicons/react'
 import clsx from 'clsx'
 import Form from 'next/form'
-import { useState } from 'react'
-import {PriceRangeSlider} from "@/components/PriceRangeSlider";
+import { useEffect, useMemo, useRef, useState } from 'react'
+import Input from '@/shared/Input'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import {TCheckboxFilter, TListFilterOption, TListFilterOptions} from "@/data/types";
 
-type CheckboxFilter = {
-  label: string
-  name: string
-  tabUIType: 'checkbox'
-  options: {
-    name: string
-    description?: string
-    defaultChecked?: boolean
-  }[]
-}
-type PriceRangeFilter = {
-  name: string
-  label: string
-  tabUIType: 'price-range'
-  min: number
-  max: number
-}
-type SelectNumberFilter = {
-  name: string
-  label: string
-  tabUIType: 'select-number'
-  options: {
-    name: string
-    max: number
-  }[]
-}
-
-const demo_filters_options = [
-  {
-    name: 'type-of-place',
-    label: 'Type of place',
-    tabUIType: 'checkbox',
-    options: [
-      {
-        name: 'Entire place',
-        value: 'entire_place',
-        description: 'Have a place to yourself',
-        defaultChecked: true,
-      },
-      {
-        name: 'Private room',
-        value: 'private_room',
-        description: 'Have your own room and share some common spaces',
-        defaultChecked: true,
-      },
-      {
-        name: 'Hotel room',
-        value: 'hotel_room',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Shared room',
-        value: 'shared_room',
-        description: 'Stay in a shared space, like a common room',
-      },
-    ],
-  },
-  {
-    label: 'Price per day',
-    name: 'price-per-day',
-    tabUIType: 'price-range',
-    min: 0,
-    max: 1000,
-  },
-  {
-    label: 'Rooms & Beds',
-    name: 'rooms-beds',
-    tabUIType: 'select-number',
-    options: [
-      { name: 'Beds', max: 10 },
-      { name: 'Bedrooms', max: 10 },
-      { name: 'Bathrooms', max: 10 },
-    ],
-  },
-  {
-    label: 'Amenities',
-    name: 'amenities',
-    tabUIType: 'checkbox',
-    options: [
-      {
-        name: 'Kitchen',
-        value: 'kitchen',
-        description: 'Have a place to yourself',
-        defaultChecked: true,
-      },
-      {
-        name: 'Air conditioning',
-        value: 'air_conditioning',
-        description: 'Have your own room and share some common spaces',
-        defaultChecked: true,
-      },
-      {
-        name: 'Heating',
-        value: 'heating',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Dryer',
-        value: 'dryer',
-        description: 'Stay in a shared space, like a common room',
-      },
-      {
-        name: 'Washer',
-        value: 'washer',
-        description: 'Stay in a shared space, like a common room',
-      },
-    ],
-  },
-  {
-    name: 'Facilities',
-    label: 'Facilities',
-    tabUIType: 'checkbox',
-    options: [
-      {
-        name: 'Free parking on premise',
-        value: 'free_parking_on_premise',
-        description: 'Have a place to yourself',
-      },
-      {
-        name: 'Hot tub',
-        value: 'hot_tub',
-        description: 'Have your own room and share some common spaces',
-      },
-      {
-        name: 'Gym',
-        value: 'gym',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Pool',
-        value: 'pool',
-        description: 'Stay in a shared space, like a common room',
-      },
-      {
-        name: 'EV charger',
-        value: 'ev_charger',
-        description: 'Stay in a shared space, like a common room',
-      },
-    ],
-  },
-  {
-    name: 'Property-type',
-    label: 'Property type',
-    tabUIType: 'checkbox',
-    options: [
-      {
-        name: 'House',
-        value: 'house',
-        description: 'Have a place to yourself',
-      },
-      {
-        name: 'Bed and breakfast',
-        value: 'bed_and_breakfast',
-        description: 'Have your own room and share some common spaces',
-      },
-      {
-        name: 'Apartment',
-        defaultChecked: true,
-        value: 'apartment',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Boutique hotel',
-        value: 'boutique_hotel',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Bungalow',
-        value: 'bungalow',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Chalet',
-        defaultChecked: true,
-        value: 'chalet',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Condominium',
-        defaultChecked: true,
-        value: 'condominium',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Cottage',
-        value: 'cottage',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Guest suite',
-        value: 'guest_suite',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-      {
-        name: 'Guesthouse',
-        value: 'guesthouse',
-        description: 'Have a private or shared room in a boutique hotel, hostel, and more',
-      },
-    ],
-  },
-  {
-    name: 'House-rules',
-    label: 'House rules',
-    tabUIType: 'checkbox',
-    options: [
-      {
-        name: 'Pets allowed',
-        value: 'pets_allowed',
-        description: 'Have a place to yourself',
-      },
-      {
-        name: 'Smoking allowed',
-        value: 'smoking_allowed',
-        description: 'Have your own room and share some common spaces',
-      },
-    ],
-  },
-]
-
-const CheckboxPanel = ({ filterOption, className }: { filterOption: CheckboxFilter; className?: string }) => {
+const CheckboxPanel = ({ filterOption, className }: { filterOption: TCheckboxFilter; className?: string }) => {
   return (
     <Fieldset>
       <CheckboxGroup className={className}>
@@ -261,27 +43,57 @@ const CheckboxPanel = ({ filterOption, className }: { filterOption: CheckboxFilt
     </Fieldset>
   )
 }
-const PriceRagePanel = ({ filterOption: { min, max, name } }: { filterOption: PriceRangeFilter }) => {
-  const [rangePrices, setRangePrices] = useState([min, max])
-
-  return <PriceRangeSlider defaultValue={rangePrices} onChange={setRangePrices} min={min} max={max} />
-}
-const NumberSelectPanel = ({ filterOption: { name, options } }: { filterOption: SelectNumberFilter }) => {
-  return (
-    <div className="relative flex flex-col gap-y-5">
-      {options.map((option) => (
-        <NcInputNumber key={option.name} inputName={option.name} label={option.name} max={option.max} />
-      ))}
-    </div>
-  )
-}
 
 const ListingFilterTabs = ({
-  filterOptions = demo_filters_options,
+  filterOptions = [],
 }: {
-  filterOptions?: Partial<typeof demo_filters_options>
+  filterOptions?: TListFilterOptions
 }) => {
   const [showAllFilter, setShowAllFilter] = useState(false)
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+  const [search, setSearch] = useState<string>(searchParams.get('q') || '')
+  const debounceRef = useRef<number | null>(null)
+
+  // Keep local state in sync when user navigates via back/forward
+  useEffect(() => {
+    const current = searchParams.get('q') || ''
+    setSearch(current)
+  }, [searchParams])
+
+  // Debounce search typing and sync to URL (?q=)
+  // Important: do NOT depend on searchParams here, otherwise pagination clicks
+  // (which change ?page=) will trigger this effect and wipe the page param.
+  useEffect(() => {
+    if (debounceRef.current) {
+      window.clearTimeout(debounceRef.current)
+    }
+    debounceRef.current = window.setTimeout(() => {
+      const currentQInUrl = (searchParams.get('q') || '').trim()
+      const nextQ = search.trim()
+
+      // If q didn't actually change, do nothing (avoid clearing page on noop)
+      if (currentQInUrl === nextQ) return
+
+      const params = new URLSearchParams(searchParams.toString())
+      if (nextQ) {
+        params.set('q', nextQ)
+      } else {
+        params.delete('q')
+      }
+      // reset pagination only when search (q) changes
+      params.delete('page')
+      const query = params.toString()
+      router.push(query ? `${pathname}?${query}` : pathname, { scroll: false })
+    }, 300) as unknown as number
+
+    return () => {
+      if (debounceRef.current) {
+        window.clearTimeout(debounceRef.current)
+      }
+    }
+  }, [search, pathname, router])
 
   const handleFormSubmit = async (formData: FormData) => {
     const formDataObject = Object.fromEntries(formData.entries())
@@ -335,13 +147,7 @@ const ListingFilterTabs = ({
                         <h3 className="text-xl font-medium">{filterOption.label}</h3>
                         <div className="relative mt-6">
                           {filterOption.tabUIType === 'checkbox' && (
-                            <CheckboxPanel filterOption={filterOption as CheckboxFilter} />
-                          )}
-                          {filterOption.tabUIType === 'price-range' && (
-                            <PriceRagePanel key={index} filterOption={filterOption as PriceRangeFilter} />
-                          )}
-                          {filterOption.tabUIType === 'select-number' && (
-                            <NumberSelectPanel key={index} filterOption={filterOption as SelectNumberFilter} />
+                            <CheckboxPanel filterOption={filterOption as TCheckboxFilter} />
                           )}
                         </div>
                       </div>
@@ -370,7 +176,7 @@ const ListingFilterTabs = ({
   }
 
   return (
-    <div className="flex flex-wrap md:gap-x-4 md:gap-y-2">
+    <div className="flex flex-wrap items-center md:gap-x-4 md:gap-y-2">
       {renderTabAllFilters()}
       <PopoverGroup className="hidden flex-wrap gap-x-4 gap-y-2 md:flex" as={Form} action={handleFormSubmit}>
         <div className="h-auto w-px bg-neutral-200 dark:bg-neutral-700"></div>
@@ -381,7 +187,7 @@ const ListingFilterTabs = ({
           }
 
           const checkedNumber =
-            (filterOption as CheckboxFilter).options?.filter((option) => !!option.defaultChecked)?.length || 0
+            (filterOption as TCheckboxFilter).options?.filter((option) => !!option.defaultChecked)?.length || 0
 
           return (
             <Popover className="relative" key={index}>
@@ -410,15 +216,7 @@ const ListingFilterTabs = ({
               >
                 <div className="rounded-2xl border border-neutral-200 bg-white shadow-xl dark:border-neutral-700 dark:bg-neutral-900">
                   <div className="hidden-scrollbar max-h-[28rem] overflow-y-auto px-5 py-6">
-                    {filterOption.tabUIType === 'checkbox' && (
-                      <CheckboxPanel filterOption={filterOption as CheckboxFilter} />
-                    )}
-                    {filterOption.tabUIType === 'price-range' && (
-                      <PriceRagePanel key={index} filterOption={filterOption as PriceRangeFilter} />
-                    )}
-                    {filterOption.tabUIType === 'select-number' && (
-                      <NumberSelectPanel key={index} filterOption={filterOption as SelectNumberFilter} />
-                    )}
+                      <CheckboxPanel filterOption={filterOption as TCheckboxFilter} />
                   </div>
 
                   <div className="flex items-center justify-between rounded-b-2xl bg-neutral-50 p-5 dark:border-t dark:border-neutral-800 dark:bg-neutral-900">
@@ -435,6 +233,21 @@ const ListingFilterTabs = ({
           )
         })}
       </PopoverGroup>
+      {/* Search input aligned to the right end */}
+      <div className="ms-auto mt-3 w-full md:mt-0 md:w-72">
+        <label htmlFor="listing-search" className="sr-only">
+          {T['common']['Start your search']}
+        </label>
+        <Input
+          id="listing-search"
+          name="q"
+          type="search"
+          placeholder="식당명, 지점명, 주소 등으로 검색해보세요"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className=""
+        />
+      </div>
     </div>
   )
 }

@@ -5,12 +5,12 @@ import { FC } from 'react'
 import {TInfluencerRestaurant} from "@/data/types";
 import {Link} from "@/shared/link";
 
-export interface CarCardHProps {
+export interface TCeoCardProps {
   className?: string
   data: TInfluencerRestaurant
 }
 
-const RestaurantCard: FC<CarCardHProps> = ({ className = '', data }) => {
+const RestaurantCard: FC<TCeoCardProps> = ({ className = '', data }) => {
   const {
       id,
       title,

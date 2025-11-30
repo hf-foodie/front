@@ -19,7 +19,7 @@ const SectionContributor = () => {
       </Heading>
       <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {founders.map((item) => (
-          <div key={item.id} className="w-40">
+          <div key={item.id} className="w-32">
             <div className="aspect-w-1 relative h-0 overflow-hidden rounded-xl aspect-h-1">
               <Image
                 fill

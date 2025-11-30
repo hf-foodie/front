@@ -5,17 +5,25 @@ import {getRestaurantLising, getRestaurantListFilterOptions} from "@/data/influe
 import ListingFilterTabs from "@/app/(app)/influencer/intern/ListingFilterTabs";
 import RestaurantCard from "@/app/(app)/influencer/intern/RestaurantCard";
 import PaginationWrapper from "@/components/PaginationWrapper";
-import {TInfluencerRestaurant} from "@/data/types";
+import {TInfluencerRestaurant, TListFilterOptions} from "@/data/types";
 import {Suspense} from "react";
 import {useSearchParams} from "next/navigation";
 
-const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: any; }) => {
+const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: TListFilterOptions; }) => {
     const searchParams = useSearchParams()
     const currentPage = Number(searchParams.get('page')) || 1
+    const q = (searchParams.get('q') || '').toLowerCase().trim()
+    const filteredListings = q
+        ? listings.filter((l) =>
+            [l.title, l.branch, l.address]
+                .filter(Boolean)
+                .some((field) => String(field).toLowerCase().includes(q))
+        )
+        : listings
     const itemsPerPage = 8
-    const totalPages = Math.ceil(listings.length / itemsPerPage)
+    const totalPages = Math.ceil(filteredListings.length / itemsPerPage)
 
-    const currentListings = listings.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    const currentListings = filteredListings.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
     return (
         <div className="pb-28">

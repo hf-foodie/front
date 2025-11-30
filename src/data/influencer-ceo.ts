@@ -218,20 +218,6 @@ export async function getRestaurantLising() {
             foodStyleCategory: ['중식']
         },
         {
-            id: 'ceo-listing-010',
-            title: '진라이',
-            handle: 'peugeot-108',
-            listingCategory: 'ceo',
-            description: '섬진강은 보리굴',
-            featuredImage: ceo_010.src,
-            address: '경기 안양시 동안구 관평로 186 3층',
-            reviewStart: 4.4,
-            representative_menu: '점식 정식, 짜장, 탕수육',
-            branch: '경기중부지사',
-            timeZoneCategory: ['점심'],
-            foodStyleCategory: ['중식']
-        },
-        {
             id: 'ceo-listing-011',
             title: '긴자',
             handle: 'peugeot-108',
@@ -423,20 +409,6 @@ export async function getRestaurantLising() {
             address: '서울 강서구 마곡동로10길 46 보타닉파크프라자 1층 111호',
             reviewStart: 4.4,
             representative_menu: '마르게리따, 디아볼라, 고르곤졸라, 페페로니',
-            branch: '서울서부지사',
-            timeZoneCategory: ['점심'],
-            foodStyleCategory: ['양식']
-        },
-        {
-            id: 'ceo-listing-024',
-            title: '우리동네화덕피자브루노',
-            handle: 'peugeot-108',
-            listingCategory: 'ceo',
-            description: '섬진강은 보리굴',
-            featuredImage: ceo_024.src,
-            address: '경기 용인시 기흥구 기흥로 58-1 A동 B112호 락풀',
-            reviewStart: 4.4,
-            representative_menu: '에그인헬, 하프피자, 화덕피자',
             branch: '서울서부지사',
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['양식']
