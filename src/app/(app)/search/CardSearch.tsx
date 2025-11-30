@@ -21,7 +21,7 @@ interface Props {
 }
 
 const CardSearch: FC<Props> = ({ className, post, hiddenAuthor = false, ratio = 'aspect-4/3' }) => {
-  const { id, firstPostDate, badge, rating, author, name, title, subtitle, summary, oneLineReviews, address, phoneNumber, tags, images } = post
+  const { id, firstPostDate, badge, rating, author, name, title, summary, oneLineReviews, address, phoneNumber, tags, images } = post
 
   const [isHover, setIsHover] = useState(false)
 

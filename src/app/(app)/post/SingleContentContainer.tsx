@@ -40,7 +40,6 @@ const SingleContentContainer: FC<Props> = ({ post, comments, className }) => {
         author,
         name,
         title,
-        subtitle,
         summary,
         oneLineReviews,
         address,

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { handle: string } 
   }
   return {
     title: post.title,
-    description: post.subtitle,
+    description: post.name,
   }
 }
 

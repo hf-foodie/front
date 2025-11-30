@@ -12,7 +12,6 @@ export type TPost = {
     author: string;
     name: string;
     title: string;
-    subtitle: string;
     summary: string;
     oneLineReviews: string[];
     address: string;

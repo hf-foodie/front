@@ -8,6 +8,8 @@ import { SingleMetaAction } from './SingleMetaAction'
 import SingleTitle from './SingleTitle'
 import {TComment} from "@/data/comment.server";
 import {TPost} from "@/data/types";
+import {StarIcon} from "@heroicons/react/24/solid";
+import StartRating from "@/components/StartRating";
 
 interface Props {
   className?: string
@@ -24,7 +26,6 @@ const TitleAndMeta = ({ className, post, comments }: Omit<Props, 'headerStyle'>)
         author,
         name,
         title,
-        subtitle,
         summary,
         oneLineReviews,
         address,
@@ -37,7 +38,13 @@ const TitleAndMeta = ({ className, post, comments }: Omit<Props, 'headerStyle'>)
     <div className={`single-header-meta space-y-5 ${className}`}>
       {/*<NameBadge categories={categories || []} />*/}
         <SingleTitle title={title} />
-        <p className="text-base/relaxed text-neutral-700 md:text-2xl/relaxed dark:text-neutral-400">{subtitle}</p>
+        <p className="text-base/relaxed text-neutral-700 md:text-2xl/relaxed dark:text-neutral-400 flex items-center justify-between">
+            <span>{name}</span>
+            <span className="inline-flex items-center gap-2">
+                <StarIcon className={clsx('text-orange-400', 'size-5')} />
+                <span>{rating}</span>
+            </span>
+        </p>
         <Divider />
         <div className="flex flex-wrap gap-5">
         <SingleMeta author={author} firstPostDate={firstPostDate} readingTime={0} />
