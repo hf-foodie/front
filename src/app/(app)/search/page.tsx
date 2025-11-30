@@ -53,6 +53,7 @@ const PageSearch = async ({ searchParams }: { searchParams: SearchParams }) => {
       totalResults={totalResults}
       searchQuery={searchQuery}
       searchTab={searchTab as 'posts' | 'tags'}
+      currentPage={currentPage}
     />
   )
 }

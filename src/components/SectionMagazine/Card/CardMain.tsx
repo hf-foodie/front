@@ -26,7 +26,6 @@ const CardMain: FC<Props> = ({ className, size = 'normal', magazine }) => {
     featuredImage,
     handle,
     readingTime,
-    postType,
     likeCount,
     liked,
     commentCount,
@@ -45,12 +44,6 @@ const CardMain: FC<Props> = ({ className, size = 'normal', magazine }) => {
           alt={title}
         />
         <Link href={`/post/${handle}`} className="absolute inset-0 z-0"></Link>
-        <PostTypeFeaturedIcon
-          className="absolute bottom-3 left-3"
-          postType={postType}
-          wrapSize="size-8"
-          iconSize="size-4"
-        />
         <MagazineBadgeList
           className="absolute top-3 left-3 flex flex-wrap space-x-2"
           itemClass="relative"

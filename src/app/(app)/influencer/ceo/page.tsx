@@ -9,7 +9,7 @@ import RestaurantCard from '@/app/(app)/influencer/ceo/RestaurantCard'
 import { getRestaurantLising, getRestaurantListFilterOptions } from '@/data/influencer-ceo'
 import {TInfluencerRestaurant} from "@/data/types";
 
-const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: any; author: any }) => {
+const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: any; }) => {
   const searchParams = useSearchParams()
   const currentPage = Number(searchParams.get('page')) || 1
   const itemsPerPage = 8

@@ -11,7 +11,6 @@ import { HugeiconsIcon } from '@hugeicons/react'
 import CardSearch from '@/app/(app)/search/CardSearch'
 import { FC, useEffect, useState } from 'react'
 import { TPost, TTag } from '@/data/types'
-import { useSearchParams } from 'next/navigation'
 
 const POSTS_PER_PAGE = 8
 
@@ -38,6 +37,7 @@ interface SearchClientProps {
   totalResults: number
   searchQuery: string
   searchTab: 'posts' | 'tags'
+  currentPage: number
 }
 
 const SearchClient: FC<SearchClientProps> = ({
@@ -46,13 +46,10 @@ const SearchClient: FC<SearchClientProps> = ({
   totalResults,
   searchQuery,
   searchTab,
+  currentPage,
 }) => {
-  const searchParams = useSearchParams()
   const [searchValue, setSearchValue] = useState(searchQuery)
   const [filteredPosts, setFilteredPosts] = useState(initialPosts)
-
-  const page = searchParams.get('page')
-  const currentPage = page ? parseInt(page, 10) : 1
 
   useEffect(() => {
     if (searchTab === 'posts') {
@@ -88,7 +85,7 @@ const SearchClient: FC<SearchClientProps> = ({
         return (
           <div className="mt-12 flex flex-wrap gap-3">
             {tags?.map((tag) => (
-              <Tag key={tag.id} href={`/tag/${tag.handle}`}>
+              <Tag key={tag.name} href={`/search?s=${tag.name}&tab=tag`}>
                 {tag.name}
               </Tag>
             ))}

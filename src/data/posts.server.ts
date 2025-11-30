@@ -8,9 +8,6 @@ import {TPost} from "@/data/types";
 
 const postsDirectory = path.join(process.cwd(), 'src/data/posts')
 
-
-
-
 /**
  * Reads a single JSON post file from the src/data/posts directory
  * based on the handle (filename without extension).

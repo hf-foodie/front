@@ -17,10 +17,11 @@ import { ShareDropdown } from './SingleMetaAction'
 import TheContent from './TheContent'
 import {TPostDetail} from "@/data/posts.server";
 import {TComment} from "@/data/comment.server";
+import {TPost} from "@/data/types";
 // import {TComment} from "@/data/posts";
 
 interface Props {
-  post: TPostDetail
+  post: TPost
   comments: TComment[]
   className?: string
 }

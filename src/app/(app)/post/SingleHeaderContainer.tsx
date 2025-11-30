@@ -6,12 +6,12 @@ import GalleryImages from './GalleryImages'
 import SingleMeta from './SingleMeta'
 import { SingleMetaAction } from './SingleMetaAction'
 import SingleTitle from './SingleTitle'
-import {TPostDetail} from "@/data/posts.server";
 import {TComment} from "@/data/comment.server";
+import {TPost} from "@/data/types";
 
 interface Props {
   className?: string
-  post: TPostDetail
+  post: TPost
     comments: TComment
 }
 
@@ -40,7 +40,7 @@ const TitleAndMeta = ({ className, post, comments }: Omit<Props, 'headerStyle'>)
         <p className="text-base/relaxed text-neutral-700 md:text-2xl/relaxed dark:text-neutral-400">{subtitle}</p>
         <Divider />
         <div className="flex flex-wrap gap-5">
-        <SingleMeta author={author} date={firstPostDate} readingTime={0} />
+        <SingleMeta author={author} firstPostDate={firstPostDate} readingTime={0} />
         <SingleMetaAction
           className="ms-auto"
           commentCount={comments.length}

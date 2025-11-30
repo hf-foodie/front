@@ -1,11 +1,8 @@
 'use client'
 
-import FollowButton from '@/components/FollowButton'
 import VerifyIcon from '@/components/VerifyIcon'
 import Avatar from '@/shared/Avatar'
-import { Button } from '@/shared/Button'
 import ButtonCircle from '@/shared/ButtonCircle'
-import { Dialog, DialogActions, DialogBody, DialogTitle } from '@/shared/dialog'
 import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@/shared/dropdown'
 import { GlobeAltIcon } from '@heroicons/react/24/outline'
 import {
@@ -34,7 +31,7 @@ const PageHeader = ({ className }: { className?: string }) => {
           {/* AVATAR */}
           <Avatar
             alt='사장'
-            src="/images/influencer/ceo/avatar-ceo.png"
+            src="/images/influencer/ceo/avatar.png"
             width={128}
             height={128}
             className="shrink-0 rounded-full shadow-2xl ring-4 ring-white lg:w-32"

@@ -9,7 +9,7 @@ import {TInfluencerRestaurant} from "@/data/types";
 import {Suspense} from "react";
 import {useSearchParams} from "next/navigation";
 
-const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: any; author: any }) => {
+const ListingPageContent = ({ listings, filterOptions }: { listings: TInfluencerRestaurant[]; filterOptions: any; }) => {
     const searchParams = useSearchParams()
     const currentPage = Number(searchParams.get('page')) || 1
     const itemsPerPage = 8

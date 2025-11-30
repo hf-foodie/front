@@ -22,7 +22,6 @@ const CardSub: FC<Props> = ({ className, magazine }) => {
     handle,
     readingTime,
     featuredImage,
-    postType,
     likeCount,
     liked,
     commentCount,
@@ -61,9 +60,6 @@ const CardSub: FC<Props> = ({ className, magazine }) => {
           src={featuredImage}
           alt={title}
         />
-        <span className="absolute start-1 bottom-1">
-          <PostTypeFeaturedIcon wrapSize="h-7 w-7" iconSize="h-4 w-4" postType={postType} />
-        </span>
       </Link>
     </div>
   )

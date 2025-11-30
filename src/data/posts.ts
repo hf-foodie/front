@@ -1693,10 +1693,6 @@ export async function getAllPosts() {
   //return posts
 }
 
-export async function getAllPosts1() {
-
-}
-
 export async function getPostByHandle(handle: string) {
   const posts = await getAllPosts()
   let post = posts.find((post) => post.handle === handle) as TPost

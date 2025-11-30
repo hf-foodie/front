@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Wheel } from 'react-custom-roulette-r19'
+import dynamic from 'next/dynamic'
+
+const Wheel = dynamic(() => import('react-custom-roulette-r19').then((mod) => mod.Wheel), { ssr: false })
 
 const initialData = [
   { option: '구내식당', style: { backgroundColor: '#EF4444', textColor: 'white' } },
@@ -17,6 +19,7 @@ const GamePage = () => {
   const [mustSpin, setMustSpin] = useState(false)
   const [prizeNumber, setPrizeNumber] = useState(0)
   const [wheelData, setWheelData] = useState(initialData)
+  const [results, setResults] = useState<string[]>([])
 
   // CRUD state
   const [newItem, setNewItem] = useState('')
@@ -72,12 +75,16 @@ const GamePage = () => {
     }
   }
 
+  const handleClearResults = () => {
+    setResults([])
+  }
+
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 p-4 dark:bg-neutral-900">
       <h1 className="mb-10 text-4xl font-bold">오늘 뭐 먹지?</h1>
-      <div className="flex w-full max-w-4xl flex-col items-center gap-10 md:flex-row md:items-start">
+      <div className="grid w-full max-w-6xl grid-cols-1 items-start gap-10 md:grid-cols-3">
         {/* Roulette Wheel */}
-        <div className="flex flex-col items-center justify-center">
+        <div className="col-span-1 flex flex-col items-center justify-center md:col-span-2">
           {wheelData.length > 0 ? (
             <Wheel
               mustStartSpinning={mustSpin}
@@ -85,13 +92,15 @@ const GamePage = () => {
               data={wheelData}
               onStopSpinning={() => {
                 setMustSpin(false)
-                alert(`오늘은 ${wheelData[prizeNumber]?.option || ''} 먹는 날!`)
+                const winner = wheelData[prizeNumber]?.option || ''
+                alert(`오늘은 ${winner} 먹는 날!`)
+                setResults([...results, winner])
               }}
               backgroundColors={['#3e3e3e', '#df3434']}
               textColors={['#ffffff']}
             />
           ) : (
-            <div className="flex h-[300px] w-[300px] items-center justify-center rounded-full bg-gray-200 text-gray-500">
+            <div className="flex h-[300px] w-[300px] items-center justify-center rounded-full bg-gray-200 text-gray-500 md:h-[400px] md:w-[400px]">
               메뉴를 추가해주세요!
             </div>
           )}
@@ -104,88 +113,113 @@ const GamePage = () => {
           </button>
         </div>
 
-        {/* CRUD Panel */}
-        <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800">
-          <h2 className="mb-4 text-2xl font-bold">메뉴 관리</h2>
+        {/* Panels */}
+        <div className="col-span-1 flex flex-col gap-6">
+          {/* CRUD Panel */}
+          <div className="w-full rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800">
+            <h2 className="mb-4 text-2xl font-bold">메뉴 관리</h2>
 
-          <div className="mb-4 flex gap-2">
-            <input
-              type="text"
-              value={newItem}
-              onChange={(e) => setNewItem(e.target.value)}
-              placeholder="새 메뉴 이름"
-              className="flex-grow rounded border px-3 py-2 disabled:cursor-not-allowed disabled:bg-gray-200 dark:border-neutral-600 dark:bg-neutral-700 dark:disabled:bg-neutral-800"
-              disabled={mustSpin}
-            />
-            <button
-              onClick={handleAddItem}
-              className="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-600 disabled:cursor-not-allowed disabled:bg-gray-400"
-              disabled={mustSpin}
-            >
-              추가
-            </button>
-          </div>
+            <div className="mb-4 flex gap-2">
+              <input
+                type="text"
+                value={newItem}
+                onChange={(e) => setNewItem(e.target.value)}
+                placeholder="새 메뉴 이름"
+                className="flex-grow rounded border px-3 py-2 disabled:cursor-not-allowed disabled:bg-gray-200 dark:border-neutral-600 dark:bg-neutral-700 dark:disabled:bg-neutral-800"
+                disabled={mustSpin}
+              />
+              <button
+                onClick={handleAddItem}
+                className="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                disabled={mustSpin}
+              >
+                추가
+              </button>
+            </div>
 
-          <div className="mb-4 flex justify-end gap-2">
-            <button
-              onClick={handleReset}
-              className="rounded bg-gray-500 px-4 py-2 text-sm font-bold text-white hover:bg-gray-600 disabled:cursor-not-allowed disabled:bg-gray-400"
-              disabled={mustSpin}
-            >
-              초기화
-            </button>
-            <button
-              onClick={handleDeleteAll}
-              className="rounded bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-600 disabled:cursor-not-allowed disabled:bg-gray-400"
-              disabled={mustSpin}
-            >
-              전체삭제
-            </button>
-          </div>
+            <div className="mb-4 flex justify-end gap-2">
+              <button
+                onClick={handleReset}
+                className="rounded bg-gray-500 px-4 py-2 text-sm font-bold text-white hover:bg-gray-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                disabled={mustSpin}
+              >
+                초기화
+              </button>
+              <button
+                onClick={handleDeleteAll}
+                className="rounded bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                disabled={mustSpin}
+              >
+                전체삭제
+              </button>
+            </div>
 
-          <ul className="space-y-2">
-            {wheelData.map((item, index) => (
-              <li key={index} className="flex items-center justify-between rounded bg-gray-100 p-2 dark:bg-neutral-700">
-                {editingIndex === index ? (
-                  <input
-                    type="text"
-                    value={editingText}
-                    onChange={(e) => setEditingText(e.target.value)}
-                    className="flex-grow rounded border px-2 py-1 dark:border-neutral-600 dark:bg-neutral-600"
-                    disabled={mustSpin}
-                  />
-                ) : (
-                  <span className="flex-grow">{item.option}</span>
-                )}
-                <div className="flex gap-2">
+            <ul className="max-h-60 space-y-2 overflow-y-auto">
+              {wheelData.map((item, index) => (
+                <li key={index} className="flex items-center justify-between rounded bg-gray-100 p-2 dark:bg-neutral-700">
                   {editingIndex === index ? (
-                    <button
-                      onClick={() => handleSaveItem(index)}
-                      className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                    <input
+                      type="text"
+                      value={editingText}
+                      onChange={(e) => setEditingText(e.target.value)}
+                      className="flex-grow rounded border px-2 py-1 dark:border-neutral-600 dark:bg-neutral-600"
                       disabled={mustSpin}
-                    >
-                      저장
-                    </button>
+                    />
                   ) : (
+                    <span className="flex-grow">{item.option}</span>
+                  )}
+                  <div className="flex gap-2">
+                    {editingIndex === index ? (
+                      <button
+                        onClick={() => handleSaveItem(index)}
+                        className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                        disabled={mustSpin}
+                      >
+                        저장
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => handleEditItem(index)}
+                        className="rounded bg-yellow-500 px-3 py-1 text-sm text-white hover:bg-yellow-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                        disabled={mustSpin}
+                      >
+                        수정
+                      </button>
+                    )}
                     <button
-                      onClick={() => handleEditItem(index)}
-                      className="rounded bg-yellow-500 px-3 py-1 text-sm text-white hover:bg-yellow-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                      onClick={() => handleDeleteItem(index)}
+                      className="rounded bg-red-500 px-3 py-1 text-sm text-white hover:bg-red-600 disabled:cursor-not-allowed disabled:bg-gray-400"
                       disabled={mustSpin}
                     >
-                      수정
+                      삭제
                     </button>
-                  )}
-                  <button
-                    onClick={() => handleDeleteItem(index)}
-                    className="rounded bg-red-500 px-3 py-1 text-sm text-white hover:bg-red-600 disabled:cursor-not-allowed disabled:bg-gray-400"
-                    disabled={mustSpin}
-                  >
-                    삭제
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Results Panel */}
+          <div className="w-full rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-2xl font-bold">추첨 결과</h2>
+              <button
+                onClick={handleClearResults}
+                className="rounded bg-gray-500 px-3 py-1 text-sm font-bold text-white hover:bg-gray-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                disabled={results.length === 0}
+              >
+                초기화
+              </button>
+            </div>
+            <ul className="max-h-60 space-y-2 overflow-y-auto">
+              {results.map((result, index) => (
+                <li key={index} className="rounded bg-gray-100 p-2 dark:bg-neutral-700">
+                  {index + 1}. {result}
+                </li>
+              ))}
+              {results.length === 0 && <li className="text-gray-500">추첨 결과가 없습니다.</li>}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 'use client'
 
-import { getAllPosts, TPost } from '@/data/posts'
 import { Button } from '@/shared/Button'
 import ButtonCircle from '@/shared/ButtonCircle'
 import { Link } from '@/shared/link'
@@ -25,47 +24,42 @@ import { FC, useEffect, useState } from 'react'
 import CategoryBadgeList from '../CategoryBadgeList'
 import LocalDate from '../LocalDate'
 import PostTypeFeaturedIcon from '../PostTypeFeaturedIcon'
+import {TPost} from "@/data/types";
 
 interface Option {
-  type: 'recommended_searches' | 'quick-action'
   name: string
   icon: IconSvgElement
-  uri: string
+  id: string
 }
 
 const recommended_searches: Option[] = [
   {
-    type: 'recommended_searches',
-    name: '흥미원',
-    icon: Search01Icon,
-    uri: '/search/?s=흥미원',
+      name: '흥미원',
+      icon: Search01Icon,
+      id: 'P00002',
   },
   {
-    type: 'recommended_searches',
-    name: '궁중돼지국밥',
-    icon: Search01Icon,
-    uri: '/search/?s=궁중돼지국밥',
+      name: '궁중돼지국밥',
+      icon: Search01Icon,
+      id: 'P00011',
   },
 ]
 
 const quickActions: Option[] = [
   {
-    type: 'quick-action',
     name: '통합검색',
     icon: Search01Icon,
-    uri: '/search/?s=',
+      id: '',
   },
   {
-    type: 'quick-action',
     name: '글쓴이 검색',
     icon: UserSearchIcon,
-    uri: '/search/?tab=authors&s=',
+      id: '',
   },
   {
-    type: 'quick-action',
     name: '태그 검색',
     icon: Tag02Icon,
-    uri: '/search/?tab=tags&s=',
+      id: '',
   },
 ]
 
@@ -77,8 +71,12 @@ const SearchModal: FC = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      // for demo purposes, we're fetching all posts
-      const posts = (await getAllPosts()).slice(0, 4)
+      if (query === '') {
+        setPosts([])
+        return
+      }
+      const response = await fetch(`/api/posts?q=${query}`)
+      const posts = await response.json()
       setPosts(posts)
     }
     fetchPosts()
@@ -119,16 +117,11 @@ const SearchModal: FC = () => {
             className="mx-auto w-full max-w-2xl transform divide-y divide-gray-100 self-end overflow-hidden bg-white shadow-2xl ring-1 ring-black/5 transition duration-300 ease-out data-closed:translate-y-10 data-closed:opacity-0 sm:self-start sm:rounded-xl dark:divide-gray-700 dark:bg-neutral-800 dark:ring-white/10"
           >
             <Combobox
-              onChange={(item: Option | TPost) => {
-                if ('uri' in item) {
-                  if (item.type === 'recommended_searches') {
-                    router.push(item.uri)
-                  } else {
-                    router.push(item.uri + query)
-                  }
-                } else if ('handle' in item) {
-                  router.push(`/post/${item.handle}`)
+              onChange={(item: Option | TPost | null) => {
+                if (!item) {
+                  return
                 }
+                  router.push(`/post/${item.id}`)
                 setOpen(false)
               }}
               form="search-form-combobox"
@@ -142,7 +135,7 @@ const SearchModal: FC = () => {
                   <ComboboxInput
                     autoFocus
                     className="h-12 w-full border-0 bg-transparent ps-11 pe-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm dark:text-gray-100 dark:placeholder:text-gray-300"
-                    placeholder="Type to search..."
+                    placeholder="식당명을 검색하세요"
                     onChange={_.debounce(handleSetSearchValue, 200)}
                     onBlur={() => setQuery('')}
                     data-autofocus
@@ -172,7 +165,7 @@ const SearchModal: FC = () => {
                         posts.map((post) => (
                           <ComboboxOption
                             as={'li'}
-                            key={post.handle}
+                            key={post.id}
                             value={post}
                             className={({ focus }) =>
                               clsx(
@@ -185,8 +178,8 @@ const SearchModal: FC = () => {
                           </ComboboxOption>
                         ))
                       ) : (
-                        <div className="py-5">
-                          <p>No posts found</p>
+                        <div className="py-5 px-4 text-center">
+                          <p>No results found for &quot;{query}&quot;</p>
                         </div>
                       )}
                     </ul>
@@ -282,22 +275,22 @@ const SearchModal: FC = () => {
 }
 
 const CardPost = ({ post }: { post: TPost }) => {
-  const { title, date, categories, author, featuredImage, postType } = post
+  const { title, firstPostDate, tags, author, images, id } = post
 
   return (
     <div className={`group relative flex flex-row-reverse gap-3 rounded-2xl p-4 sm:gap-5`}>
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="text-xs leading-6 text-neutral-600 xl:text-sm/6 dark:text-neutral-400">
-            <span className="capitalize">{author?.name || ''}</span>
+            <span className="capitalize">{author || ''}</span>
             <span className="mx-1.5">·</span>
-            <LocalDate date={date} />
+            <LocalDate date={firstPostDate} />
           </p>
 
-          <CategoryBadgeList categories={categories} />
+          {/*<CategoryBadgeList categories={categories} />*/}
         </div>
         <h4 className="mt-2 text-sm leading-6 font-medium text-neutral-900 dark:text-neutral-300">
-          <Link className="absolute inset-0" href={`/post/${post.handle}`} />
+          <Link className="absolute inset-0" href={`/post/${post.id}`} />
           {post.title}
         </h4>
       </div>
@@ -307,13 +300,10 @@ const CardPost = ({ post }: { post: TPost }) => {
           sizes="(max-width: 600px) 180px, 400px"
           className="object-cover"
           fill
-          src={featuredImage || ''}
+          src={images[0] || ''}
           alt={title || 'Card Image'}
         />
-        <span className="absolute start-1 bottom-1">
-          <PostTypeFeaturedIcon wrapSize="h-7 w-7" iconSize="h-4 w-4" postType={postType} />
-        </span>
-        <Link className="absolute inset-0" href={`/post/${post.handle}`} />
+        <Link className="absolute inset-0" href={`/post/${post.id}`} />
       </div>
     </div>
   )

@@ -68,7 +68,7 @@ const CarCardH: FC<CarCardHProps> = ({ className = '', data }) => {
             </h2>
           </div>
           <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400">
-            <StartRating reviewCount={reviewCount} point={reviewStart} />
+            <StartRating point={reviewStart} />
             <span>· </span>
             <div className="flex items-center">
               <span className="hidden text-base sm:inline-block">

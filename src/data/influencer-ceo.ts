@@ -446,7 +446,6 @@ export async function getRestaurantLising() {
             title: '해동',
             handle: 'peugeot-108',
             listingCategory: 'ceo',
-            description: '섬진강은 보리굴',
             featuredImage: ceo_025.src,
             address: '부산 수영구 민락수변로 105 바다산책프라자',
             reviewStart: 4.4,

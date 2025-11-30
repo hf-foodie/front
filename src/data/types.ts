@@ -27,9 +27,7 @@ export type TInfluencerRestaurant = {
     title: string;
     handle: string;
     listingCategory: string;
-    description: string;
     featuredImage: string;
-    galleryImgs: string[];
     address: string;
     reviewStart: number;
     representative_menu: string;
@@ -37,3 +35,11 @@ export type TInfluencerRestaurant = {
     timeZoneCategory: string[];
     foodStyleCategory: string[];
 };
+
+export type TVPresidentRestaurant = TInfluencerRestaurant & {
+    recommendation: boolean;
+};
+
+export type TTag = {
+    name: string;
+}

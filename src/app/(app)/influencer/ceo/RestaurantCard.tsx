@@ -1,17 +1,13 @@
-import BtnLikeIcon from '@/components/BtnLikeIcon'
-import SaleOffBadge from '@/components/SaleOffBadge'
 import StartRating from '@/components/StartRating'
-import { TCarListing } from '@/data/listings'
-import { Badge } from '@/shared/Badge'
 import { MapPinIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import Link from 'next/link'
 import { FC } from 'react'
-import {TRestaurant} from "@/data/types";
+import {TInfluencerRestaurant} from "@/data/types";
+import {Link} from "@/shared/link";
 
 export interface CarCardHProps {
   className?: string
-  data: TRestaurant
+  data: TInfluencerRestaurant
 }
 
 const RestaurantCard: FC<CarCardHProps> = ({ className = '', data }) => {
@@ -20,11 +16,9 @@ const RestaurantCard: FC<CarCardHProps> = ({ className = '', data }) => {
       title,
       handle,
       listingCategory,
-      description,
       featuredImage,
       address,
       reviewStart,
-      reviewCount,
       representative_menu,
       branch,
       timeZoneCategory,

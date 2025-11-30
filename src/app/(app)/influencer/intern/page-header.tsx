@@ -1,28 +1,22 @@
 'use client'
 
-import FollowButton from '@/components/FollowButton'
-import VerifyIcon from '@/components/VerifyIcon'
-import Avatar from '@/shared/Avatar'
-import { Button } from '@/shared/Button'
+import clsx from "clsx";
+import Avatar from "@/shared/Avatar";
+import VerifyIcon from "@/components/VerifyIcon";
+import { Link } from "@/shared/link";
 import ButtonCircle from '@/shared/ButtonCircle'
-import { Dialog, DialogActions, DialogBody, DialogTitle } from '@/shared/dialog'
 import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@/shared/dropdown'
 import { GlobeAltIcon } from '@heroicons/react/24/outline'
 import {
-  CopyLinkIcon,
-  Facebook01Icon,
-  Flag03Icon,
-  Mail01Icon,
-  MoreHorizontalIcon,
-  NewTwitterIcon,
-  Share03Icon,
-  ViewOffSlashIcon,
-} from '@hugeicons/core-free-icons'
-import { HugeiconsIcon } from '@hugeicons/react'
-import clsx from 'clsx'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
+    CopyLinkIcon,
+    Facebook01Icon,
+    Flag03Icon,
+    Mail01Icon, MoreHorizontalIcon,
+    NewTwitterIcon, Share03Icon,
+    ViewOffSlashIcon
+} from "@hugeicons/core-free-icons";
+import {HugeiconsIcon} from "@hugeicons/react";
+import {useState} from "react";
 
 const PageHeader = ({ className }: { className?: string }) => {
 
@@ -34,7 +28,7 @@ const PageHeader = ({ className }: { className?: string }) => {
           {/* AVATAR */}
           <Avatar
             alt='맛잘알 김인턴'
-            src="/images/influencer/intern/avatar-intern.png"
+            src="/images/influencer/intern/avatar.png"
             width={128}
             height={128}
             className="shrink-0 rounded-full shadow-2xl ring-4 ring-white lg:w-32"
