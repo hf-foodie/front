@@ -4,9 +4,9 @@ import Image from 'next/image'
 const founders = [
   {
     id: '1',
-    name: `박소영 (1690)`,
+    name: `익명의 박대리 (1690)`,
     job: 'ICT운영부',
-    avatar: '/images/about/contributor/박소영.png',
+    avatar: '/images/about/contributor/avatar-1690.png',
   },
 ]
 

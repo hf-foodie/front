@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="타입 오류 해결">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/influencer-cc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-cc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/influencer-ceo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-ceo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/influencer-intern.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-intern.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/influencer-vpresident.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-vpresident.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(app)/about/SectionContributor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/about/SectionContributor.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +55,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/src/images/influencer/cc",
+    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/public/images/about/contributor",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,11 +80,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\about\contributor" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\influencer\comtributor" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\images\influencer\cc" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\images\influencer\vpresident" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\influencer\cc" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)\influencer\cc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts" />
@@ -98,7 +94,7 @@
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00020" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Next.js: 서버 측">
     <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -242,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764505605473</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="타입 오류 해결">
+      <option name="closed" value="true" />
+      <created>1764521692246</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764521692246</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +279,7 @@
     <MESSAGE value="최재경 대리 데이터 추가 등록" />
     <MESSAGE value="오타 수정" />
     <MESSAGE value="JSON 오류 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="JSON 오류 수정" />
+    <MESSAGE value="타입 오류 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="타입 오류 해결" />
   </component>
 </project>
