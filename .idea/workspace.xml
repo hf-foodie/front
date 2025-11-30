@@ -4,34 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="JSON 오류 수정">
+    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/posts/P00033/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/posts/P00033/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/posts/P00033/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/posts/P00033/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/posts/P00033/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/about/SectionContributor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/about/SectionContributor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/ListingFilterTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/ListingFilterTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/RestaurantCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/RestaurantCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/intern/ListingFilterTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/intern/ListingFilterTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/intern/RestaurantCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/intern/RestaurantCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/intern/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/intern/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/vpresident/ListingFilterTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/vpresident/ListingFilterTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/vpresident/RestaurantCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/vpresident/RestaurantCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/vpresident/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/vpresident/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListingFilterTabs.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/influencer-cc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-cc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/influencer-ceo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-ceo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/influencer-intern.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-intern.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/influencer-vpresident.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-vpresident.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00028.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00028.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00029.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00029.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00030.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00030.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00031.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00031.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00034.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00034.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00035.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00035.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/influencer/vpresident/한가정.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/influencer/vpresident/한가정.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +98,7 @@
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00020" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Next.js: 서버 측">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>

@@ -82,7 +82,7 @@ export async function getRestaurantLising() {
             address: '대구 중구 남성로 50 이타국시',
             reviewStart: 5,
             representative_menu: '한우 사골 국시, 이타왕돈까스, 쭈꾸미 비빔 칼국수',
-            branch: '대구지사',
+            branch: ['대구지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -96,7 +96,7 @@ export async function getRestaurantLising() {
             address: '대구 중구 동성로1길 25 2층',
             reviewStart: 5,
             representative_menu: '찜닭',
-            branch: '대구지사',
+            branch: ['대구지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -110,7 +110,7 @@ export async function getRestaurantLising() {
             featuredImage: intern_003.src,
             address: '대구 중구 남성로 53 1층',
             representative_menu: '각종 샤브샤브',
-            branch: '대구지사',
+            branch: ['대구지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -124,7 +124,7 @@ export async function getRestaurantLising() {
             featuredImage: intern_004.src,
             address: '대구 중구 달구벌대로 2109-23',
             representative_menu: '불대창지로라멘, 돈코츠라멘',
-            branch: '대구지사',
+            branch: ['대구지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['일식']
         },
@@ -138,7 +138,7 @@ export async function getRestaurantLising() {
             featuredImage: intern_005.src,
             address: '대구 중구 남성로 58-1',
             representative_menu: '삼화우동, 쫄면콤비',
-            branch: '대구지사',
+            branch: ['대구지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -152,7 +152,7 @@ export async function getRestaurantLising() {
             featuredImage: intern_006.src,
             address: '강원 춘천시 영서로2279번길 19 1층',
             representative_menu: '닭곰탐, 닭칼국수',
-            branch: '강원서부지사',
+            branch: ['강원서부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -166,7 +166,7 @@ export async function getRestaurantLising() {
             featuredImage: intern_007.src,
             address: '강원 춘천시 춘천로17번길 21 116호',
             representative_menu: '칼국수',
-            branch: '강원서부지사',
+            branch: ['강원서부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -180,7 +180,7 @@ export async function getRestaurantLising() {
             featuredImage: intern_008.src,
             address: '강원 춘천시 춘천로17번길 21 116호',
             representative_menu: '허브김치삼겹살',
-            branch: '강원서부지사',
+            branch: ['강원서부지사'],
             timeZoneCategory: ['저녁'],
             foodStyleCategory: ['한식']
         },
@@ -194,7 +194,7 @@ export async function getRestaurantLising() {
             address: '강원 춘천시 춘천로17번길 21 116호',
             reviewStart: 5,
             representative_menu: '꽁치김치찌개',
-            branch: '강원서부지사',
+            branch: ['강원서부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -208,7 +208,7 @@ export async function getRestaurantLising() {
             address: '강원 춘천시 영서로2269번길 3',
             reviewStart: 5,
             representative_menu: '차돌짬뽕, 탕수육',
-            branch: '강원서부지사',
+            branch: ['강원서부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['중식']
         },
@@ -222,7 +222,7 @@ export async function getRestaurantLising() {
             address: '서울 중구 후암로 98 엘지서울역빌딩 지하1층 랑우',
             reviewStart: 5,
             representative_menu: '보양 소고기 쌀국수, 칠리새우 반쎄오',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['아시안식']
         },
@@ -236,7 +236,7 @@ export async function getRestaurantLising() {
             address: '서울 용산구 후암로57길 3-9 1층',
             reviewStart: 5,
             representative_menu: '즉석떡볶이',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -250,7 +250,7 @@ export async function getRestaurantLising() {
             address: '서울 용산구 후암로 79',
             reviewStart: 5,
             representative_menu: '차돌짬뽕, 탕수육',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['중식']
         },
@@ -264,7 +264,7 @@ export async function getRestaurantLising() {
             address: '서울 용산구 후암로57길 3-2 2층',
             reviewStart: 5,
             representative_menu: '명동칼국수, 보쌈칼국수정식',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -278,7 +278,7 @@ export async function getRestaurantLising() {
             address: '서울 중구 만리재로35길 5 1층',
             reviewStart: 5,
             representative_menu: '아포 양지쌀국수, 아포 분짜, 새우볶음밥, 반미',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['아시안식']
         },
@@ -292,7 +292,7 @@ export async function getRestaurantLising() {
             address: '광주 서구 상무시민로 131 1층',
             reviewStart: 5,
             representative_menu: '아구찜, 누룽치즈볶음밥, 묵사발',
-            branch: '광주지사',
+            branch: ['광주지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -306,7 +306,7 @@ export async function getRestaurantLising() {
             address: '광주 서구 상무중앙로78번길 5-6 102호',
             reviewStart: 5,
             representative_menu: '부부라떼, 각종 케이크',
-            branch: '광주지사',
+            branch: ['광주지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['양식']
         },
@@ -320,7 +320,7 @@ export async function getRestaurantLising() {
             address: '광주 서구 상무중앙로 70 1층 보울레시피',
             reviewStart: 5,
             representative_menu: '연어스테이크X명란포케, 나만의 레시피',
-            branch: '광주지사',
+            branch: ['광주지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['양식']
         },
@@ -334,7 +334,7 @@ export async function getRestaurantLising() {
             address: '광주 서구 상무연하로 62 1층',
             reviewStart: 5,
             representative_menu: '제육볶음+찌개+공기밥 세트',
-            branch: '광주지사',
+            branch: ['광주지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -348,7 +348,7 @@ export async function getRestaurantLising() {
             address: '광주 서구 상무시민로 131 1층',
             reviewStart: 5,
             representative_menu: '철판양념삼겹, 제육쌈밥',
-            branch: '광주지사',
+            branch: ['광주지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },

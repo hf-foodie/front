@@ -30,7 +30,7 @@ export type TInfluencerRestaurant = {
     address: string;
     reviewStart: number;
     representative_menu: string;
-    branch: string;
+    branch: string[];
     timeZoneCategory: string[];
     foodStyleCategory: string[];
 };

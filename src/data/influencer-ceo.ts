@@ -87,7 +87,7 @@ export async function getRestaurantLising() {
             address: '부산 부산진구 전포대로122번길 9',
             reviewStart: 4.6,
             representative_menu: '이모카세, 생선구이 정식',
-            branch: '본사',
+            branch: ['본사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['한식']
         },
@@ -101,7 +101,7 @@ export async function getRestaurantLising() {
             address: '서울 중구 한강대로 416 지하1층 24-1호',
             reviewStart: 4.2,
             representative_menu: '언양식 한우불고기, 동화 골동면, 갈비코스',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -115,7 +115,7 @@ export async function getRestaurantLising() {
             address: '부산 사상구 광장로 60',
             reviewStart: 4.4,
             representative_menu: '코스 요리',
-            branch: '서부산지사',
+            branch: ['서부산지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['일식']
         },
@@ -129,7 +129,7 @@ export async function getRestaurantLising() {
             address: '충남 아산시 배방읍 광장로 210 202동 에이 217,218,219호',
             reviewStart: 4.4,
             representative_menu: '꼬막비빔밥, 꼬막 무침',
-            branch: '충남지사',
+            branch: ['충남지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -143,7 +143,7 @@ export async function getRestaurantLising() {
             address: '경남 창원시 성산구 중앙대로100번길 9 202(상남동)',
             reviewStart: 4.4,
             representative_menu: '모둠 정식',
-            branch: '경남지사',
+            branch: ['경남지사'],
             timeZoneCategory: ['점심', '저녁'],
             foodStyleCategory: ['일식']
         },
@@ -157,7 +157,7 @@ export async function getRestaurantLising() {
             address: '경기 고양시 일산동구 중앙로 1053',
             reviewStart: 4.1,
             representative_menu: '모둠 정식',
-            branch: '경기북부지사',
+            branch: ['경기북부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -171,7 +171,7 @@ export async function getRestaurantLising() {
             address: '전남 순천시 남신월4길 13-26',
             reviewStart: 4.1,
             representative_menu: '순천길 남도정식, 계절정식',
-            branch: '전남지사',
+            branch: ['전남지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['일식']
         },
@@ -185,7 +185,7 @@ export async function getRestaurantLising() {
             address: '광주 서구 신촌길 20 1층',
             reviewStart: 4.1,
             representative_menu: '보리굴비정식, 생선구이정식, 갈치구이정식',
-            branch: '광주지사',
+            branch: ['광주지사'],
             timeZoneCategory: ['저녁'],
             foodStyleCategory: ['한식']
         },
@@ -199,7 +199,7 @@ export async function getRestaurantLising() {
             address: '전북 전주시 덕진구 시천로 65 호남각',
             reviewStart: 4.1,
             representative_menu: '전주 비빔밥, 전주 떡갈비 정식',
-            branch: '전북지사',
+            branch: ['전북지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -213,7 +213,7 @@ export async function getRestaurantLising() {
             address: '경기 안양시 동안구 관평로 186 3층',
             reviewStart: 4.4,
             representative_menu: '점식 정식, 짜장, 탕수육',
-            branch: '경기중부지사',
+            branch: ['경기중부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['중식']
         },
@@ -227,7 +227,7 @@ export async function getRestaurantLising() {
             address: '경기 성남시 분당구 새마을로 75',
             reviewStart: 4.5,
             representative_menu: '정식 코스',
-            branch: '충북지사',
+            branch: ['충북지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['일식']
         },
@@ -241,7 +241,7 @@ export async function getRestaurantLising() {
             address: '대전 서구 문정로 40',
             reviewStart: 4.7,
             representative_menu: '점식 정식',
-            branch: '대전지사',
+            branch: ['대전지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['일식']
         },
@@ -255,7 +255,7 @@ export async function getRestaurantLising() {
             address: '인천 남동구 예술로204번길 35 해인빌딩 1층',
             reviewStart: 4.4,
             representative_menu: '장수정식',
-            branch: '인천남부지사',
+            branch: ['인천남부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -269,7 +269,7 @@ export async function getRestaurantLising() {
             address: '강원 춘천시 춘천로 19',
             reviewStart: 4.4,
             representative_menu: '강원나물밥정식, 곰배령 특정식',
-            branch: '강원서부지사',
+            branch: ['강원서부지사'],
             timeZoneCategory: ['저녁'],
             foodStyleCategory: ['한식']
         },
@@ -283,7 +283,7 @@ export async function getRestaurantLising() {
             address: '강원 강릉시 임영로164번길 3',
             reviewStart: 4.4,
             representative_menu: '보리굴비정식, 황태구이, 더덕구이',
-            branch: '강원동부지사',
+            branch: ['강원동부지사'],
             timeZoneCategory: ['저녁'],
             foodStyleCategory: ['한식']
         },
@@ -297,7 +297,7 @@ export async function getRestaurantLising() {
             address: '경기 수원시 팔달구 권광로196번길 12 1층',
             reviewStart: 4.7,
             representative_menu: '떡갈비정식, 보리굴비회정식',
-            branch: '경기남부지사',
+            branch: ['경기남부지사'],
             timeZoneCategory: ['저녁'],
             foodStyleCategory: ['한식']
         },
@@ -311,7 +311,7 @@ export async function getRestaurantLising() {
             address: '제주 제주시 연북로 222',
             reviewStart: 4.2,
             representative_menu: '전복돌솥밥, 돌솥구이정식, 전복구이',
-            branch: '제주지사',
+            branch: ['제주지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -325,7 +325,7 @@ export async function getRestaurantLising() {
             address: '서울 중구 한강대로 416 서울스퀘어 1층 8호',
             reviewStart: 3.9,
             representative_menu: '보리굴비정식, 세꼬시정식, 사시미정식',
-            branch: '서울중부지사',
+            branch: ['서울중부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -339,7 +339,7 @@ export async function getRestaurantLising() {
             address: '서울 서초구 강남대로 359 대우도씨에빛2',
             reviewStart: 4.1,
             representative_menu: '광어사시미, 히라메고노와다, 연어사시미',
-            branch: '서울남부지사',
+            branch: ['서울남부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['일식']
         },
@@ -353,7 +353,7 @@ export async function getRestaurantLising() {
             address: '경상북도 안동시 옥동 773-5 1층 미스터피자',
             reviewStart: 3.6,
             representative_menu: '피자, 파스타 등',
-            branch: '경북지사',
+            branch: ['경북지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['양식']
         },
@@ -367,7 +367,7 @@ export async function getRestaurantLising() {
             address: '경북 안동시 복주길 51 1층 101호',
             reviewStart: 3.5,
             representative_menu: '뿌링클, 맛초킹 등',
-            branch: '경북지사',
+            branch: ['경북지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['양식']
         },
@@ -381,7 +381,7 @@ export async function getRestaurantLising() {
             address: '대구 중구 남성로 53-1 산 한정식',
             reviewStart: 3.5,
             representative_menu: '젊음이 넘치는 산, 짝을 찾는 산 등 정식',
-            branch: '대구지사',
+            branch: ['대구지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['한식']
         },
@@ -395,7 +395,7 @@ export async function getRestaurantLising() {
             address: '경기 용인시 기흥구 기흥로 58-1 A동 B112호 락풀',
             reviewStart: 4.4,
             representative_menu: '에그인헬, 하프피자, 화덕피자',
-            branch: '경기동부지사',
+            branch: ['경기동부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['양식']
         },
@@ -409,7 +409,7 @@ export async function getRestaurantLising() {
             address: '서울 강서구 마곡동로10길 46 보타닉파크프라자 1층 111호',
             reviewStart: 4.4,
             representative_menu: '마르게리따, 디아볼라, 고르곤졸라, 페페로니',
-            branch: '서울서부지사',
+            branch: ['서울서부지사'],
             timeZoneCategory: ['점심'],
             foodStyleCategory: ['양식']
         },
@@ -422,7 +422,7 @@ export async function getRestaurantLising() {
             address: '부산 수영구 민락수변로 105 바다산책프라자',
             reviewStart: 4.4,
             representative_menu: '코스요리',
-            branch: '본사',
+            branch: ['본사'],
             timeZoneCategory: ['저녁'],
             foodStyleCategory: ['일식']
         },
