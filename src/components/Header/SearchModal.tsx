@@ -49,17 +49,12 @@ const quickActions: Option[] = [
   {
     name: '통합검색',
     icon: Search01Icon,
-      id: '',
+      id: 'post'
   },
   {
-    name: '글쓴이 검색',
-    icon: UserSearchIcon,
-      id: '',
-  },
-  {
-    name: '태그 검색',
-    icon: Tag02Icon,
-      id: '',
+      name: '태그검색',
+      icon: Search01Icon,
+      id: 'tag'
   },
 ]
 
@@ -121,7 +116,15 @@ const SearchModal: FC = () => {
                 if (!item) {
                   return
                 }
-                  router.push(`/post/${item.id}`)
+
+                  if (item.name === "태그검색") {
+                      router.push(`/search?tab=tags`)
+                  } else if (item.name === "통합검색") {
+                      router.push(`/search?tab=post`)
+                  } else {
+                      router.push(`/post/${item.id}`)
+                  }
+
                 setOpen(false)
               }}
               form="search-form-combobox"
@@ -287,7 +290,6 @@ const CardPost = ({ post }: { post: TPost }) => {
             <LocalDate date={firstPostDate} />
           </p>
 
-          {/*<CategoryBadgeList categories={categories} />*/}
         </div>
         <h4 className="mt-2 text-sm leading-6 font-medium text-neutral-900 dark:text-neutral-300">
           <Link className="absolute inset-0" href={`/post/${post.id}`} />

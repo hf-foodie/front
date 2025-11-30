@@ -6,32 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="인플루언서 페이지 완성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/influencer/ceo/avatar-ceo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/influencer/ceo/avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/influencer/intern/avatar-intern.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/influencer/intern/avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/game/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/game/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/RestaurantCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/RestaurantCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/page-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/page-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/ceo/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/intern/RestaurantCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/intern/RestaurantCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/intern/page-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/intern/page-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/intern/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/intern/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/influencer/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/influencer/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/post/SingleContentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/SingleContentContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/post/SingleHeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/SingleHeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/post/SingleMeta.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/SingleMeta.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(app)/post/[handle]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/post/[handle]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/SearchClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/SearchClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(app)/search/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(app)/search/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/posts/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/posts/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CarCardH.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarCardH.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/SearchModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/SearchModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazine/Card/CardMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazine/Card/CardMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SectionMagazine/Card/CardSub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SectionMagazine/Card/CardSub.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/influencer-ceo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-ceo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/influencer-intern.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/influencer-intern.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts.server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/branches.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/branches.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00004.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00005.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00006.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00007.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00008.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00009.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00010.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00011.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00012.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00013.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00014.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/comments/P00015.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +71,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/src/images/influencer/vpresident",
+    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/public/images/posts/P00022",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,21 +96,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\images\influencer\vpresident" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00022" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00020" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00019" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00018" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data\posts" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\influencer\vpresident" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\app\(app)\influencer\vpresident" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00017" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00016" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\influencer\vpresident" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\images\influencer\vpresident" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\images\influencer\intern" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00012" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00004" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Next.js: 서버 측">
     <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -145,8 +136,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript 디버그.Next.js: 클라이언트 측에서 디버그" />
-      <item itemvalue="npm.build" />
       <item itemvalue="npm.Next.js: 서버 측" />
+      <item itemvalue="npm.build" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -171,6 +162,7 @@
       <workItem from="1764376292597" duration="221000" />
       <workItem from="1764376542501" duration="23363000" />
       <workItem from="1764425683806" duration="22436000" />
+      <workItem from="1764478225488" duration="2639000" />
     </task>
     <task id="LOCAL-00001" summary="next 프로젝트 새로 생성">
       <option name="closed" value="true" />
@@ -213,6 +205,17 @@
       <list>
         <option value="$PROJECT_DIR$/next.config.mjs" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">

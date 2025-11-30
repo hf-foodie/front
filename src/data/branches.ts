@@ -1,18 +1,5 @@
 import { TPost } from '@/data/posts'
 
-const _demo_category_image_urls = [
-  'https://images.unsplash.com/photo-1539477857993-860599c2e840?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1636306950045-4dbb10b7e0f4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1679913969285-64f089885005?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1680792563719-288027b2a090?q=80&w=2693&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1679403855896-49b0bd34744a?q=80&w=2693&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1533090368676-1fd25485db88?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1660254149750-f31f1c59a86b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1462611290231-f44865b5750c?q=80&w=2271&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-]
-
 export type TBranch = Awaited<ReturnType<typeof getBranches>>[number] & {
   posts?: TPost[]
 }
@@ -22,7 +9,7 @@ export async function getBranches() {
     {
       id: 'branch-first',
       name: '부산광역시',
-      handle: 'busan',
+      handle: '부산',
       count: 13,
       thumbnail: {
         src: '/images/branches/busan.png',
@@ -34,7 +21,7 @@ export async function getBranches() {
     {
       id: 'branch-P00002',
       name: '서울특별시',
-      handle: 'seoul',
+      handle: '서울',
       count: 13,
       thumbnail: {
         src: '/images/branches/seoul.png',
@@ -46,7 +33,7 @@ export async function getBranches() {
     {
       id: 'branch-00003',
       name: '경주시',
-      handle: 'gyeongju',
+      handle: '경주',
       count: 13,
       thumbnail: {
         src: '/images/branches/gyeongju.png',
@@ -58,7 +45,7 @@ export async function getBranches() {
     {
       id: 'branch-00004',
       name: '제주시',
-      handle: 'jeju',
+      handle: '제주',
       count: 13,
       thumbnail: {
         src: '/images/branches/jeju.png',
@@ -70,7 +57,7 @@ export async function getBranches() {
     {
       id: 'branch-00005',
       name: '대구광역시',
-      handle: 'daegu',
+      handle: '대구',
       count: 13,
       thumbnail: {
         src: '/images/branches/daegu.png',
@@ -82,7 +69,7 @@ export async function getBranches() {
     {
       id: 'branch-00006',
       name: '울산광역시',
-      handle: 'ulsan',
+      handle: '울산',
       count: 13,
       thumbnail: {
         src: '/images/branches/ulsan.png',
@@ -94,7 +81,7 @@ export async function getBranches() {
     {
       id: 'branch-00007',
       name: '광주광역시',
-      handle: 'gwangju',
+      handle: '광주',
       count: 13,
       thumbnail: {
         src: '/images/branches/gwangju.png',
@@ -106,7 +93,7 @@ export async function getBranches() {
     {
       id: 'branch-P00008',
       name: '순천시',
-      handle: 'suncheon',
+      handle: '순천',
       count: 13,
       thumbnail: {
         src: '/images/branches/suncheon.png',
@@ -118,7 +105,7 @@ export async function getBranches() {
     {
       id: 'branch-00009',
       name: '창원특례시',
-      handle: 'changwon',
+      handle: '창원',
       count: 13,
       thumbnail: {
         src: '/images/branches/changwon.png',
@@ -130,7 +117,7 @@ export async function getBranches() {
     {
       id: 'branch-00010',
       name: '세종특별자치시',
-      handle: 'sejong',
+      handle: '세종',
       count: 13,
       thumbnail: {
         src: '/images/branches/sejong.png',
@@ -142,7 +129,7 @@ export async function getBranches() {
     {
       id: 'branch-00011',
       name: '대전광역시',
-      handle: 'daejeon',
+      handle: '대전',
       count: 13,
       thumbnail: {
         src: '/images/branches/daejeon.png',
@@ -154,7 +141,7 @@ export async function getBranches() {
     {
       id: 'branch-00012',
       name: '안동시',
-      handle: 'andong',
+      handle: '안동',
       count: 13,
       thumbnail: {
         src: '/images/branches/andong.png',
@@ -166,7 +153,7 @@ export async function getBranches() {
     {
       id: 'branch-00013',
       name: '청주시',
-      handle: 'cheongju',
+      handle: '청주',
       count: 13,
       thumbnail: {
         src: '/images/branches/cheongju.png',
@@ -178,7 +165,7 @@ export async function getBranches() {
     {
       id: 'branch-00014',
       name: '천안시',
-      handle: 'cheonan',
+      handle: '천안',
       count: 13,
       thumbnail: {
         src: '/images/branches/cheonan.png',
@@ -190,7 +177,7 @@ export async function getBranches() {
     {
       id: 'branch-00015',
       name: '원주시',
-      handle: 'wonju',
+      handle: '원주',
       count: 13,
       thumbnail: {
         src: '/images/branches/wonju.png',
@@ -202,7 +189,7 @@ export async function getBranches() {
     {
       id: 'branch-00016',
       name: '춘천시',
-      handle: 'chuncheon',
+      handle: '춘천',
       count: 13,
       thumbnail: {
         src: '/images/branches/chuncheon.png',

@@ -27,7 +27,7 @@ const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
     const { handle } = await params
 
     const post = await getPostByHandle(handle)
-    const comments = await getCommentByHandles(handle)
+    const comments = await getCommentByHandles('P00001')
 
     if (!post) {
         notFound();
