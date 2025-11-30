@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="박재원 대리 데이터 등록">
+    <list default="true" id="c9baa6b7-5952-4334-817e-a69a0aa7bc33" name="변경" comment="박재원 대리 데이터 추가 등록">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/posts/P00042.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/posts/P00042.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/public/images/posts/P00050",
+    "last_opened_file_path": "C:/Users/pocke/Desktop/repo/foodie/front/public/images/posts/P00058",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,11 +80,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00050" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00058" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\src\data\posts" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00049" />
-      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00043" />
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00057" />
+      <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00056" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts" />
@@ -94,7 +94,7 @@
       <recent name="C:\Users\pocke\Desktop\repo\foodie\front\public\images\posts\P00020" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Next.js: 서버 측">
     <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -146,7 +146,7 @@
       <workItem from="1764376292597" duration="221000" />
       <workItem from="1764376542501" duration="23363000" />
       <workItem from="1764425683806" duration="22436000" />
-      <workItem from="1764478225488" duration="20257000" />
+      <workItem from="1764478225488" duration="23015000" />
     </task>
     <task id="LOCAL-00001" summary="next 프로젝트 새로 생성">
       <option name="closed" value="true" />
@@ -204,7 +204,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764499953400</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="박재원 대리 데이터 추가 등록">
+      <option name="closed" value="true" />
+      <created>1764502269774</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764502269774</updated>
+    </task>
+    <task id="LOCAL-00009" summary="박재원 대리 데이터 추가 등록">
+      <option name="closed" value="true" />
+      <created>1764502275588</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764502275588</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +250,7 @@
     <MESSAGE value="페이징 알고리즘 수정" />
     <MESSAGE value="최재경 대리 데이터 추가 등록" />
     <MESSAGE value="박재원 대리 데이터 등록" />
-    <option name="LAST_COMMIT_MESSAGE" value="박재원 대리 데이터 등록" />
+    <MESSAGE value="박재원 대리 데이터 추가 등록" />
+    <option name="LAST_COMMIT_MESSAGE" value="박재원 대리 데이터 추가 등록" />
   </component>
 </project>
